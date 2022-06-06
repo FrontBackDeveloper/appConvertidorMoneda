@@ -1,0 +1,49 @@
+<div class="container_fluid">
+	<div class="topnav">
+		<div class="logo">
+		 <img src="../../../assets/peso-argentino.jpg" alt="Logotipo" title="Logotipo">
+		</div>
+	 
+		<div class="menu">
+			<button class="btn btn-outline-warning" routerLink="/home">Home</button>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+    <div class="card">
+        <form>
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Agregue un nombre al Presupuesto</label>
+              <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">Con este nombre podrá crear, editar,consultar y eliminar el prsupuesto</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </form>
+    </div>
+   
+</div>
+<div class="container-fluid">
+    <div class="card">
+        <form>
+            <div class="mb-3">
+              <label for="nombreitem" class="form-label">Item</label>
+              <input type="text" class="form-control" placeholder="Ingrese un nombre" id="nombreitem" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="importe" class="form-label">Valor</label>
+              <input type="text" class="form-control" placeholder="Ingrese un importe" id="importe">
+            </div>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Elija una opción</option>
+                <option value="1">Pesos</option>
+                <option value="2">Dolares</option>
+                <option value="3">Euros</option>
+              </select>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-success">Editar</button>
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+           
+          </form>
+    </div>
+   
+</div>
