@@ -1,5 +1,7 @@
 /* Add a black background color to the top navigation */
-
+.container-fluid{
+  background-color: #ccc;
+}
 .topnav {
     background-color: #34495E ;
     overflow: hidden;

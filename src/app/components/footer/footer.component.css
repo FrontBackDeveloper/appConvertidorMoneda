@@ -1,0 +1,22 @@
+
+.container-fluid{
+	color: #fff;
+	justify-content: space-around;
+	padding: 10px;
+}
+p{
+	text-align: center;
+}
+.icon{
+	color: #fff;
+	font-size: 25px;
+	margin: 0 10px;
+	transition: 0.4s;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	color: #283747;
+	cursor: pointer;
+}
