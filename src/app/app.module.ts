@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -10,6 +11,9 @@ import { PresupuestoComponent } from './components/presupuesto/presupuesto.compo
 import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NuevoComponent } from './components/presupuesto/nuevo/nuevo.component';
+
+import { ApiCotizacionesService } from './servicios/api-cotizaciones.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,9 +28,10 @@ import { NuevoComponent } from './components/presupuesto/nuevo/nuevo.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiCotizacionesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
