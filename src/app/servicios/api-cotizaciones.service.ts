@@ -10,16 +10,17 @@ export class ApiCotizacionesService {
 
   constructor(private http: HttpClient) { }
 
-  obtenerDolarOficial(): Observable<any> {
-    return this.http.get<any>("/api/dolaroficial");
+  obtenerDolarOficial(): Observable<ICotizaciones> {
+    return this.http.get<ICotizaciones>("/api/dolaroficial");
   }
-  obtenerDolarBlue(): Observable<any> {
-    return this.http.get<any>("/api/dolarblue");
+  obtenerDolarBlue(): Observable<ICotizaciones> {
+    return this.http.get<ICotizaciones>("/api/dolarblue");
   }
-  obtenerDolarTurista(): Observable<any> {
-    return this.http.get<any>("/api/dolarturista");
+  obtenerDolarTurista(): Observable<ICotizaciones> {
+    return this.http.get<ICotizaciones>("/api/dolarturista");
   }
-  obtenerEuroOficial(): Observable<any> {
-    return this.http.get<any>("/api/euro/nacion");
+
+  obtenerEuroOficial(): Observable<ICotizaciones> {
+    return this.http.get<ICotizaciones>("/api/euro/nacion");
   }
 }
