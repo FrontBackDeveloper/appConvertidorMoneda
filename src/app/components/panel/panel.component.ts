@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiCotizacionesService } from 'src/app/servicios/api-cotizaciones.service';
+import { ICotizaciones } from 'src/data/ICotizaciones';
 
 
 @Component({
@@ -17,26 +18,26 @@ export class PanelComponent implements OnInit {
 
   ngOnInit(): void {
     this.ApiService.obtenerDolarOficial().subscribe(
-      (data) => { 
-        this.infoDolarOficial=data;
+      (dataDOF) => { 
+        this.infoDolarOficial=dataDOF;
       }
     );
     this.ApiService.obtenerDolarBlue().subscribe(
-      (data) => { 
-        this.infoDolarBlue=data;
+      (dataDOB) => { 
+        this.infoDolarBlue=dataDOB;
       }
     );
     this.ApiService.obtenerDolarTurista().subscribe(
-      (data) => { 
-        this.infoDolarTurista=data;
-        console.log("Dolar turista " + data);
-       
+      (dataDOT) => { 
+        this.infoDolarTurista=dataDOT;       
       }
     );
+   
     this.ApiService.obtenerEuroOficial().subscribe(
-      (data) => { 
-        this.infoEuroOficial=data;
-        console.log("Euro oficial Bco Nacion: " + data);
+      (dataEUOF: ICotizaciones) => { 
+        this.infoEuroOficial=dataEUOF;
+        console.log(dataEUOF);
+        console.log("Euro Oficial Venta= " + this.infoEuroOficial.venta + "fecha: " + this.infoEuroOficial.fecha);
       }
     );
 

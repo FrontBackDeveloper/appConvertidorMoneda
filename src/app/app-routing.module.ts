@@ -8,7 +8,7 @@ import { PresupuestoComponent } from './components/presupuesto/presupuesto.compo
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component:HomeComponent},
-  {path: 'presupuesto', component:PresupuestoComponent},
+  {path: 'presupuestos', component:PresupuestoComponent},
   {path: 'cotizaciones', component:CotizacionesComponent},
   {path: 'nuevoPresupuesto', component:NuevoComponent}
 ];
