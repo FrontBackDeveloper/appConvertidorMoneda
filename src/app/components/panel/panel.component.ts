@@ -13,8 +13,13 @@ export class PanelComponent implements OnInit {
   infoDolarBlue?:any;
   infoDolarTurista?:any;
   infoEuroOficial?:any;
+  nombreMoneda:string = '';
+  resultado?:number;
+  valor?:number;
 
   constructor(private ApiService: ApiCotizacionesService) { }
+
+ 
 
   ngOnInit(): void {
     this.ApiService.obtenerDolarOficial().subscribe(
@@ -40,7 +45,14 @@ export class PanelComponent implements OnInit {
         console.log("Euro Oficial Venta= " + this.infoEuroOficial.venta + "fecha: " + this.infoEuroOficial.fecha);
       }
     );
-
+   
   }
 
+  convertir(moneda:number, titulo:string){
+    console.log("precio de venta:" + moneda);
+    console.log(titulo);
+    this.nombreMoneda = titulo;
+  
+  }
+ 
 }
