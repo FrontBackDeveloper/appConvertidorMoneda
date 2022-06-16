@@ -16,7 +16,9 @@
             <h5 class="card-title">Euro Oficial Banco Nación</h5>
             <p class="card-text">Compra: {{infoEuroOficial.compra}}</p>
             <p class="card-text">Venta: {{infoEuroOficial.venta}}</p>
-            <a href="#" class="btn btn-primary">Calcular</a>
+            <!-- Button trigger modal -->
+            <button type="button" (click)="convertir(infoEuroOficial.venta, 'Euro Oficial Banco Nación')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#convertidor">Calcular</button>
+
           </div>
           <div class="card-footer text-muted">
             Actualizado al: {{infoEuroOficial.fecha}}
@@ -32,7 +34,8 @@
             <h5 class="card-title">Dolar Oficial Banco Nación</h5>
             <p class="card-text">Compra: {{infoDolarOficial.compra}}</p>
             <p class="card-text">Venta: {{infoDolarOficial.venta}}</p>
-            <a href="#" class="btn btn-primary">Calcular</a>
+             <!-- Button trigger modal -->
+             <button type="button" (click)="convertir(infoDolarOficial.venta, 'Dolar Oficial Banco Nación')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#convertidor">Calcular</button>
           </div>
           <div class="card-footer text-muted">
             Actualizado al: {{infoDolarOficial.fecha}}
@@ -48,7 +51,8 @@
             <h5 class="card-title">Dolar Blue</h5>
             <p class="card-text">Compra: {{infoDolarBlue.compra}}</p>
             <p class="card-text">Venta: {{infoDolarBlue.venta}}</p>
-            <a href="#" class="btn btn-primary">Calcular</a>
+             <!-- Button trigger modal -->
+             <button type="button" (click)="convertir(infoDolarBlue.venta, 'Dolar Blue')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#convertidor">Calcular</button>
           </div>
           <div class="card-footer text-muted">
             Actualizado al: {{infoDolarBlue.fecha}}
@@ -98,4 +102,30 @@
         </tbody>
       </table>  
    
+</div>
+
+<!-- MODAL CONVERTIDOR -->
+<div class="modal fade" id="convertidor" tabindex="-1" aria-labelledby="convertidorLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="convertidorLabel">Convertir</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+     
+      <div class="modal-body">
+        
+        <label for="nombreMoneda">Moneda:</label>
+        <input type="text" class="form-control"  [(ngModel)]="valor">
+        <hr>
+        <p>Son Pesos Argentinos:</p>
+        <p class="resultado">{{"$" + valor}}</p>
+       
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+   
+    </div>
+  </div>
 </div>

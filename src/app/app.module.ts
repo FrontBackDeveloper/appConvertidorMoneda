@@ -14,6 +14,7 @@ import { NuevoComponent } from './components/presupuesto/nuevo/nuevo.component';
 
 import { ApiCotizacionesService } from './servicios/api-cotizaciones.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ApiCotizacionesService],
   bootstrap: [AppComponent]
