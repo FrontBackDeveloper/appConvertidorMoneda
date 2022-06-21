@@ -2,22 +2,25 @@ import { Component, OnInit } from '@angular/core';
 import { ApiCotizacionesService } from 'src/app/servicios/api-cotizaciones.service';
 import { ICotizaciones } from 'src/data/ICotizaciones';
 
-
 @Component({
   selector: 'app-panel',
   templateUrl: './panel.component.html',
   styleUrls: ['./panel.component.css']
 })
 export class PanelComponent implements OnInit {
+  
   infoDolarOficial?:any;
   infoDolarBlue?:any;
   infoDolarTurista?:any;
   infoEuroOficial?:any;
-  nombreMoneda:string = '';
-  resultado?:number;
-  valor?:number;
+  mostrar:boolean = false;
+  valor:number =1;
+  cotiza:number = 1;
+  titulo:string = "Euro Oficial Banco Nación";
 
-  constructor(private ApiService: ApiCotizacionesService) { }
+  constructor(private ApiService: ApiCotizacionesService) {
+                
+               }
 
  
 
@@ -41,18 +44,23 @@ export class PanelComponent implements OnInit {
     this.ApiService.obtenerEuroOficial().subscribe(
       (dataEUOF: ICotizaciones) => { 
         this.infoEuroOficial=dataEUOF;
-        console.log(dataEUOF);
-        console.log("Euro Oficial Venta= " + this.infoEuroOficial.venta + "fecha: " + this.infoEuroOficial.fecha);
       }
     );
    
   }
 
-  convertir(moneda:number, titulo:string){
-    console.log("precio de venta:" + moneda);
-    console.log(titulo);
-    this.nombreMoneda = titulo;
-  
+  calcularEOF(titulo:string, valor:number){
+    this.titulo=titulo;
+    this.cotiza=this.infoEuroOficial.venta;
+  }
+  calcularDOF(titulo:string, valor:number){ 
+    this.titulo=titulo;
+    this.cotiza=this.infoDolarOficial.venta;
+  }
+  calcularBL(titulo:string, valor:number){  
+    this.titulo=titulo;
+    this.cotiza=this.infoEuroOficial.venta;
   }
  
+
 }
