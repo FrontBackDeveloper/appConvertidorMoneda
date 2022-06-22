@@ -23,4 +23,10 @@ export class ApiCotizacionesService {
   obtenerEuroOficial(): Observable<ICotizaciones> {
     return this.http.get<ICotizaciones>("/api/euro/nacion");
   }
+  obtenerDolarBBVA(): Observable<ICotizaciones>{
+    return this.http.get<ICotizaciones>("/api/bbva");
+  }
+  obtenerDolarGalicia(): Observable<ICotizaciones>{
+    return this.http.get<ICotizaciones>("/api/galicia");
+  }
 }

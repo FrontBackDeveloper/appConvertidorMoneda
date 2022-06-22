@@ -13,7 +13,10 @@ export class PanelComponent implements OnInit {
   infoDolarBlue?:any;
   infoDolarTurista?:any;
   infoEuroOficial?:any;
-  mostrar:boolean = false;
+  infoDolarBBVA?:any;
+  infoDolarGalicia?:any;
+
+  
   valor:number =1;
   cotiza:number = 1;
   titulo:string = "Euro Oficial Banco Nación";
@@ -46,6 +49,16 @@ export class PanelComponent implements OnInit {
         this.infoEuroOficial=dataEUOF;
       }
     );
+    this.ApiService.obtenerDolarBBVA().subscribe(
+      (dataBBVA: ICotizaciones) => { 
+        this.infoDolarBBVA=dataBBVA;
+      }
+    );
+    this.ApiService.obtenerDolarGalicia().subscribe(
+      (dataGALICIA: ICotizaciones) => { 
+        this.infoDolarGalicia=dataGALICIA;
+      }
+    );
    
   }
 
@@ -59,7 +72,7 @@ export class PanelComponent implements OnInit {
   }
   calcularBL(titulo:string, valor:number){  
     this.titulo=titulo;
-    this.cotiza=this.infoEuroOficial.venta;
+    this.cotiza=this.infoDolarBlue.venta;
   }
  
 
