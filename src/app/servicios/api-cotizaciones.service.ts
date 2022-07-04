@@ -1,32 +1,31 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ICotizaciones } from 'src/data/ICotizaciones';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiCotizacionesService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  obtenerDolarOficial(): Observable<ICotizaciones> {
-    return this.http.get<ICotizaciones>("/api/dolaroficial");
-  }
-  obtenerDolarBlue(): Observable<ICotizaciones> {
-    return this.http.get<ICotizaciones>("/api/dolarblue");
-  }
-  obtenerDolarTurista(): Observable<ICotizaciones> {
-    return this.http.get<ICotizaciones>("/api/dolarturista");
-  }
+  urlBase : string = "https://cors-solucion.herokuapp.com/https://api-dolar-argentina.herokuapp.com/api";
 
-  obtenerEuroOficial(): Observable<ICotizaciones> {
-    return this.http.get<ICotizaciones>("/api/euro/nacion");
+  obtenerDolarOficial(): Observable<any> {
+    return this.http.get<ICotizaciones>(this.urlBase + "/dolaroficial");
   }
-  obtenerDolarBBVA(): Observable<ICotizaciones>{
-    return this.http.get<ICotizaciones>("/api/bbva");
+  obtenerDolarBlue(): Observable<any> {
+    return this.http.get<ICotizaciones>(this.urlBase + "/dolarblue");
   }
-  obtenerDolarGalicia(): Observable<ICotizaciones>{
-    return this.http.get<ICotizaciones>("/api/galicia");
+  obtenerEuroOficial(): Observable<any> {
+    return this.http.get<ICotizaciones>(this.urlBase + "/euro/nacion");
+  }
+  obtenerDolarBBVA(): Observable<any>{
+    return this.http.get<ICotizaciones>(this.urlBase + "/bbva");
+  }
+  obtenerDolarGalicia(): Observable<any>{
+    return this.http.get<ICotizaciones>(this.urlBase + "/galicia");
   }
 }

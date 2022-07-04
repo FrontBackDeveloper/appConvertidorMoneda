@@ -8,71 +8,91 @@ import { ICotizaciones } from 'src/data/ICotizaciones';
   styleUrls: ['./panel.component.css']
 })
 export class PanelComponent implements OnInit {
-  
-  infoDolarOficial?:any;
-  infoDolarBlue?:any;
-  infoDolarTurista?:any;
-  infoEuroOficial?:any;
-  infoDolarBBVA?:any;
-  infoDolarGalicia?:any;
+  infoDolarOficial= {
+                      "fecha":"",
+                      "compra": 0,
+                      "venta":0
+                    };
 
-  
-  valor:number =1;
-  cotiza:number = 1;
+  infoDolarBlue= {
+                    "fecha":"",
+                    "compra": 0,
+                    "venta":0
+                  };
+  infoEuroOficial= {
+                      "fecha":"",
+                      "compra": 0,
+                      "venta":0
+                    };
+  infoDolarBBVA= {
+                    "fecha":"",
+                    "compra": 0,
+                    "venta":0
+                  };
+  infoDolarGalicia= {
+                      "fecha":"",
+                      "compra": 0,
+                      "venta":0
+                    };
+
+  valoringresado:number =1;
+  cotizacion:number = 1;
+  cotizacionEnviada?:number;
   titulo:string = "Euro Oficial Banco Nación";
 
   constructor(private ApiService: ApiCotizacionesService) {
                 
                }
 
- 
-
   ngOnInit(): void {
     this.ApiService.obtenerDolarOficial().subscribe(
-      (dataDOF) => { 
-        this.infoDolarOficial=dataDOF;
+      (data:ICotizaciones) => {
+        this.infoDolarOficial = data;
+        console.log("datos del API" + data);
       }
     );
     this.ApiService.obtenerDolarBlue().subscribe(
-      (dataDOB) => { 
-        this.infoDolarBlue=dataDOB;
+      (dataDOB:ICotizaciones) => { 
+        this.infoDolarBlue = dataDOB;
+        console.log("datos del API" + dataDOB);
+      
       }
-    );
-    this.ApiService.obtenerDolarTurista().subscribe(
-      (dataDOT) => { 
-        this.infoDolarTurista=dataDOT;       
-      }
-    );
-   
+    );   
     this.ApiService.obtenerEuroOficial().subscribe(
-      (dataEUOF: ICotizaciones) => { 
-        this.infoEuroOficial=dataEUOF;
+      (dataEUOF:any) => { 
+        this.infoEuroOficial = dataEUOF;
+        console.log("datos del API" + dataEUOF);
+      
       }
     );
     this.ApiService.obtenerDolarBBVA().subscribe(
-      (dataBBVA: ICotizaciones) => { 
-        this.infoDolarBBVA=dataBBVA;
+      (dataBBVA:any) => { 
+        this.infoDolarBBVA = dataBBVA;
+        console.log("datos del API" + dataBBVA);
+       
       }
     );
     this.ApiService.obtenerDolarGalicia().subscribe(
-      (dataGALICIA: ICotizaciones) => { 
-        this.infoDolarGalicia=dataGALICIA;
+      (dataGAL:any) => { 
+        this.infoDolarGalicia = dataGAL;
+        console.log("datos del API" + dataGAL);
       }
     );
    
   }
 
-  calcularEOF(titulo:string, valor:number){
+  calcularEOF(titulo:string, cotizacionEnviada:number){
     this.titulo=titulo;
-    this.cotiza=this.infoEuroOficial.venta;
+    this.cotizacion=cotizacionEnviada;
+    
   }
-  calcularDOF(titulo:string, valor:number){ 
+  calcularDOF(titulo:string, cotizacionEnviada:number){ 
     this.titulo=titulo;
-    this.cotiza=this.infoDolarOficial.venta;
+    this.cotizacion=cotizacionEnviada;
   }
-  calcularBL(titulo:string, valor:number){  
+  calcularBL(titulo:string, cotizacionEnviada:number){  
     this.titulo=titulo;
-    this.cotiza=this.infoDolarBlue.venta;
+    this.cotizacion=cotizacionEnviada;
   }
  
 

@@ -1,5 +1,5 @@
 <div class="container">
-  <h4>Cotizacion de monedas actualizadas al día: {{infoDolarOficial.fecha}}</h4>
+  <h4>Cotizacion de monedas actualizadas al día: {{infoDolarOficial.fecha}}  </h4>
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -12,17 +12,17 @@
           <div class="card-header">
             Cotización  
           </div>
-          <div class="card-body">
+          <div class="card-body" >
             <h5 class="card-title">Euro Oficial Banco Nación</h5>
-            <p class="card-text">Compra: {{infoEuroOficial.compra}}</p>
-            <p class="card-text">Venta: {{infoEuroOficial.venta}}</p>
+            <p class="card-text">Compra:{{infoEuroOficial.compra}}</p>
+            <p class="card-text">Venta:{{infoEuroOficial.venta}} </p>
             <br>
             <!-- Button trigger modal -->
             <button type="button" (click)="calcularEOF('Euro Oficial Banco Nación', infoEuroOficial.venta)" class="btn btn-primary" >Calcular</button>
             <br>
           </div>
           <div class="card-footer text-muted">
-            Actualizado al: {{infoEuroOficial.fecha}}
+            Actualizado al: {{infoEuroOficial?.fecha}}
           </div>
         </div>
       </div>
@@ -31,9 +31,9 @@
           <div class="card-header">
             Cotización 
           </div>
-          <div class="card-body">
+          <div class="card-body"  >
             <h5 class="card-title">Dolar Oficial Banco Nación</h5>
-            <p class="card-text">Compra: {{infoDolarOficial.compra}}</p>
+            <p class="card-text">Compra: {{infoDolarOficial.compra}} </p>
             <p class="card-text">Venta: {{infoDolarOficial.venta}}</p>
              <!-- Button trigger modal -->
              <br>
@@ -52,8 +52,8 @@
           </div>
           <div class="card-body">
             <h5 class="card-title">Dolar Blue</h5>
-            <p class="card-text">Compra: {{infoDolarBlue.compra}}</p>
-            <p class="card-text">Venta: {{infoDolarBlue.venta}}</p>
+            <p class="card-text">Compra:{{infoDolarBlue.compra}} </p>
+            <p class="card-text">Venta:{{infoDolarBlue.venta}} </p>
              <!-- Button trigger modal -->
              <br>
              <button type="button" (click)="calcularBL('Dolar Blue', infoDolarBlue.venta)" class="btn btn-primary" >Calcular</button>
@@ -81,8 +81,8 @@
   <div class="container convertidor">
     <div class="card convertidor-moneda">
       <label class="resultado" for="valor">{{titulo}}</label>
-      <input type="number" class="form-control resultado" [(ngModel)]="valor">
-      <p class="resultado">Son Pesos= <b>{{"$" + (this.valor)*(this.cotiza)}}</b></p>
+      <input type="number" class="form-control resultado" [(ngModel)]="valoringresado">
+      <p class="resultado">Son Pesos= <b>{{"$" + (this.valoringresado)*(this.cotizacion)}}</b></p>
     </div>
  </div>
 
@@ -99,23 +99,23 @@
         <tbody>
           <tr>
             <td>Dolar Banco Galicia</td>
-            <td>{{infoDolarGalicia.compra}}</td>
-            <td>{{infoDolarGalicia.venta}}</td>
+            <td>{{infoDolarGalicia?.compra}}</td>
+            <td>{{infoDolarGalicia?.venta}}</td>
           </tr>
           <tr>
             <td>Dolar Banco BBVA</td>
-            <td>{{infoDolarBBVA.compra}}</td>
-            <td>{{infoDolarBBVA.venta}}</td>
+            <td>{{infoDolarBBVA?.compra}}</td>
+            <td>{{infoDolarBBVA?.venta}}</td>
           </tr>
           <tr >
             <td>Dolar Oficial Bco Nación</td>
-            <td>{{infoDolarOficial.compra}}</td>
-            <td>{{infoDolarOficial.venta}}</td>
+            <td>{{infoDolarOficial?.compra}}</td>
+            <td>{{infoDolarOficial?.venta}}</td>
           </tr>
           <tr>
             <td>Euro Oficial Bco Nación</td>
-            <td>{{infoEuroOficial.compra}}</td>
-            <td>{{infoEuroOficial.venta}}</td>
+            <td>{{infoEuroOficial?.compra}}</td>
+            <td>{{infoEuroOficial?.venta}}</td>
           </tr>
           
         </tbody>
