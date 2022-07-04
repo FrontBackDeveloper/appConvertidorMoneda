@@ -1,7 +1,9 @@
+
 {
     "/api/*":{
         "target": "https://api-dolar-argentina.herokuapp.com",
         "secure": false,
         "changeOrigin": true
+        
     }
 }

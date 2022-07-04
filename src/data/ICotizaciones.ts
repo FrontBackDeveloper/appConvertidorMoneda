@@ -1,6 +1,6 @@
 export interface ICotizaciones {
-    fecha:string;
-    compra: string;
-    venta: string;
+    fecha: string;
+    compra: number;
+    venta: number;
     
 }
