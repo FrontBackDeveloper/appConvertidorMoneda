@@ -1,0 +1,88 @@
+<div class="container">
+    <h4>Convertidor de Monedas</h4>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="card text-center">
+            <div class="card-header">
+              Cotización  
+            </div>
+            <div class="card-body" >
+              <h5 class="card-title">Euro Oficial Banco Nación</h5>
+              <p class="card-text">Compra:{{infoEuroOficial.compra}}</p>
+              <p class="card-text">Venta:{{infoEuroOficial.venta}} </p>
+              <br>
+              <!-- Button trigger modal -->
+              <button type="button" (click)="calcularEOF('Euro Oficial Banco Nación', infoEuroOficial.venta)" class="btn btn-primary" >Calcular</button>
+              <br>
+            </div>
+            <div class="card-footer text-muted">
+              Actualizado al: {{infoEuroOficial?.fecha}}
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card text-center">
+            <div class="card-header">
+              Cotización 
+            </div>
+            <div class="card-body"  >
+              <h5 class="card-title">Dolar Oficial Banco Nación</h5>
+              <p class="card-text">Compra: {{infoDolarOficial.compra}} </p>
+              <p class="card-text">Venta: {{infoDolarOficial.venta}}</p>
+               <!-- Button trigger modal -->
+               <br>
+               <button type="button" (click)="calcularDOF('Dolar Oficial Banco Nación', infoDolarOficial.venta)" class="btn btn-primary" >Calcular</button>
+               <br>
+              </div>
+            <div class="card-footer text-muted">
+              Actualizado al: {{infoDolarOficial.fecha}}
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card text-center">
+            <div class="card-header">
+              Cotización 
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Dolar Blue</h5>
+              <p class="card-text">Compra:{{infoDolarBlue.compra}} </p>
+              <p class="card-text">Venta:{{infoDolarBlue.venta}} </p>
+               <!-- Button trigger modal -->
+               <br>
+               <button type="button" (click)="calcularBL('Dolar Blue', infoDolarBlue.venta)" class="btn btn-primary" >Calcular</button>
+               <br>
+              </div>
+            <div class="card-footer text-muted">
+              Actualizado al: {{infoDolarBlue.fecha}}
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  
+   <!-- NGMODEL-->
+   
+    <div class="container convertidor">
+      <div class="card convertidor-moneda">
+        <label class="resultado" for="valor">{{titulo}}</label>
+        <input type="number" class="form-control resultado" [(ngModel)]="valoringresado">
+        <p class="resultado">Son Pesos= <b>{{"$" + (this.valoringresado)*(this.cotizacion)}}</b></p>
+      </div>
+   </div>
+</div>  

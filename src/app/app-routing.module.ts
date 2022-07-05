@@ -4,13 +4,21 @@ import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.co
 import { HomeComponent } from './components/home/home.component';
 import { NuevoComponent } from './components/presupuesto/nuevo/nuevo.component';
 import { PresupuestoComponent } from './components/presupuesto/presupuesto.component';
-
+import { PanelComponent } from './components/panel/panel.component';
+import { ConvertidorComponent } from './components/convertidor/convertidor.component';
+import { NovedadesComponent } from './components/novedades/novedades.component';
+import { ComentariosComponent } from './components/comentarios/comentarios.component';
+import { LoginComponent } from './components/login/login.component';
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component:HomeComponent},
+  {path: 'convertidor', component:ConvertidorComponent},
   {path: 'presupuestos', component:PresupuestoComponent},
-  {path: 'cotizaciones', component:CotizacionesComponent},
-  {path: 'nuevoPresupuesto', component:NuevoComponent}
+  {path: 'cotizaciones', component:PanelComponent},
+  {path: 'novedades', component:NovedadesComponent},
+  {path: 'comentarios', component:ComentariosComponent},
+  {path: 'nuevoPresupuesto', component:NuevoComponent},
+  {path: 'login',component:LoginComponent}
 ];
 
 @NgModule({
