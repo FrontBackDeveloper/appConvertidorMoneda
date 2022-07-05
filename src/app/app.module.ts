@@ -15,6 +15,11 @@ import { NuevoComponent } from './components/presupuesto/nuevo/nuevo.component';
 import { ApiCotizacionesService } from './servicios/api-cotizaciones.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MenuComponent } from './components/menu/menu.component';
+import { ConvertidorComponent } from './components/convertidor/convertidor.component';
+import { NovedadesComponent } from './components/novedades/novedades.component';
+import { ComentariosComponent } from './components/comentarios/comentarios.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PresupuestoComponent,
     CotizacionesComponent,
     FooterComponent,
-    NuevoComponent
+    NuevoComponent,
+    MenuComponent,
+    ConvertidorComponent,
+    NovedadesComponent,
+    ComentariosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

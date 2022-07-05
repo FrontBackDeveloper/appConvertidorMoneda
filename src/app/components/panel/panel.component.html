@@ -18,7 +18,7 @@
             <p class="card-text">Venta:{{infoEuroOficial.venta}} </p>
             <br>
             <!-- Button trigger modal -->
-            <button type="button" (click)="calcularEOF('Euro Oficial Banco Nación', infoEuroOficial.venta)" class="btn btn-primary" >Calcular</button>
+            <button type="button" routerLink="/convertidor" (click)="calcularEOF('Euro Oficial Banco Nación', infoEuroOficial.venta)" class="btn btn-primary" >Calcular</button>
             <br>
           </div>
           <div class="card-footer text-muted">
@@ -37,7 +37,7 @@
             <p class="card-text">Venta: {{infoDolarOficial.venta}}</p>
              <!-- Button trigger modal -->
              <br>
-             <button type="button" (click)="calcularDOF('Dolar Oficial Banco Nación', infoDolarOficial.venta)" class="btn btn-primary" >Calcular</button>
+             <button type="button" routerLink="/convertidor" (click)="calcularDOF('Dolar Oficial Banco Nación', infoDolarOficial.venta)" class="btn btn-primary" >Calcular</button>
              <br>
             </div>
           <div class="card-footer text-muted">
@@ -56,7 +56,7 @@
             <p class="card-text">Venta:{{infoDolarBlue.venta}} </p>
              <!-- Button trigger modal -->
              <br>
-             <button type="button" (click)="calcularBL('Dolar Blue', infoDolarBlue.venta)" class="btn btn-primary" >Calcular</button>
+             <button type="button" routerLink="/convertidor" (click)="calcularBL('Dolar Blue', infoDolarBlue.venta)" class="btn btn-primary" >Calcular</button>
              <br>
             </div>
           <div class="card-footer text-muted">
@@ -76,15 +76,6 @@
     </button>
   </div>
 
- <!-- NGMODEL-->
- 
-  <div class="container convertidor">
-    <div class="card convertidor-moneda">
-      <label class="resultado" for="valor">{{titulo}}</label>
-      <input type="number" class="form-control resultado" [(ngModel)]="valoringresado">
-      <p class="resultado">Son Pesos= <b>{{"$" + (this.valoringresado)*(this.cotizacion)}}</b></p>
-    </div>
- </div>
 
   <h4>Otras cotizaciones y valores:</h4>
     
