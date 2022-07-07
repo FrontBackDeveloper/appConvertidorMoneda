@@ -90,10 +90,13 @@ export class PanelComponent implements OnInit {
     this.titulo=titulo;
     this.cotizacion=cotizacionEnviada;
   }
-  calcularBL(titulo:string, cotizacionEnviada:number){  
+  calcularDOT(titulo:string, cotizacionEnviada:number){ 
     this.titulo=titulo;
     this.cotizacion=cotizacionEnviada;
   }
- 
+  calcularBL(titulo:string, cotizacionEnviada:number){  
+    this.titulo=titulo;
+    this.cotizacion=cotizacionEnviada;
+  } 
 
 }

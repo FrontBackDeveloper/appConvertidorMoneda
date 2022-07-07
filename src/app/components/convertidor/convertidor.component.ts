@@ -91,6 +91,10 @@ calcularDOF(titulo:string, cotizacionEnviada:number){
 this.titulo=titulo;
 this.cotizacion=cotizacionEnviada;
 }
+calcularDOT(titulo:string, cotizacionEnviada:number){ 
+  this.titulo=titulo;
+  this.cotizacion=cotizacionEnviada;
+}
 calcularBL(titulo:string, cotizacionEnviada:number){  
 this.titulo=titulo;
 this.cotizacion=cotizacionEnviada;
