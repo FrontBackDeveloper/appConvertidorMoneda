@@ -9,6 +9,9 @@ import { ConvertidorComponent } from './components/convertidor/convertidor.compo
 import { NovedadesComponent } from './components/novedades/novedades.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
 import { LoginComponent } from './components/login/login.component';
+import { ItinerariosComponent } from './components/itinerarios/itinerarios.component';
+import { TipsypreguntasfrecuentesComponent } from './componentes/tipsypreguntasfrecuentes/tipsypreguntasfrecuentes.component';
+
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component:HomeComponent},
@@ -17,6 +20,8 @@ const routes: Routes = [
   {path: 'cotizaciones', component:PanelComponent},
   {path: 'novedades', component:NovedadesComponent},
   {path: 'comentarios', component:ComentariosComponent},
+  {path: 'itinerarios', component:ItinerariosComponent},
+  {path: 'tipsypreguntasfrecuentes', component:TipsypreguntasfrecuentesComponent},
   {path: 'nuevoPresupuesto', component:NuevoComponent},
   {path: 'login',component:LoginComponent}
 ];

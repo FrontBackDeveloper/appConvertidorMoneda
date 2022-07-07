@@ -2,12 +2,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 20px;
+    margin: 0 auto;
+    padding: 120px;
     background-color: black;
 }
 .opcion1{
     background-color: #006eff;
-    margin: 20px auto;
+    margin-right: 30px;
+    margin-bottom: 30px;
     padding: 20px 20px; 
     text-align: center;
     cursor: pointer;
@@ -15,7 +17,8 @@
 }
 .opcion2{
     background-color: blueviolet;
-    margin: 20px auto;
+    margin-right: 30px;
+    margin-bottom: 30px;
     padding: 20px; 
     text-align: center;
     cursor: pointer;
@@ -23,7 +26,8 @@
 }
 .opcion3{
     background-color: rgb(255, 0, 64);
-    margin: 20px auto;
+    margin-right: 30px;
+    margin-bottom: 30px;
     padding: 20px; 
     text-align: center;
     cursor: pointer;
@@ -31,7 +35,8 @@
 }
 .opcion4{
     background-color: hsl(133, 85%, 31%);
-    margin: 20px auto;
+    margin-right: 30px;
+    margin-bottom: 30px;
     padding: 20px; 
     text-align: center;
     cursor: pointer;
@@ -39,7 +44,26 @@
 }
 .opcion5{
     background-color: hsl(19, 87%, 41%);
-    margin: 20px auto;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    padding: 20px; 
+    text-align: center;
+    cursor: pointer;
+    width: 200px;
+}
+.opcion6{
+    background-color: hsl(320, 85%, 35%);
+    margin-right: 30px;
+    margin-bottom: 30px;
+    padding: 20px; 
+    text-align: center;
+    cursor: pointer;
+    width: 200px;
+}
+.opcion7{
+    background-color: hsl(209, 89%, 66%);
+    margin-right: 30px;
+    margin-bottom: 30px;
     padding: 20px; 
     text-align: center;
     cursor: pointer;
