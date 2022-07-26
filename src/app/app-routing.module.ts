@@ -10,7 +10,7 @@ import { NovedadesComponent } from './components/novedades/novedades.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
 import { LoginComponent } from './components/login/login.component';
 import { ItinerariosComponent } from './components/itinerarios/itinerarios.component';
-import { TipsypreguntasfrecuentesComponent } from './componentes/tipsypreguntasfrecuentes/tipsypreguntasfrecuentes.component';
+import { TipsypreguntasfrecuentesComponent } from './components/tipsypreguntasfrecuentes/tipsypreguntasfrecuentes.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},

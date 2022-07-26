@@ -1,0 +1,26 @@
+{
+    "tips":[
+        {
+            "tema":"viajes",
+            "fecha":"08/07/2022",
+            "titulo":"Preparar tu valija",
+            "descripcion":"Link a los mejores videos",
+            "url":[
+                "www.clarin.com.ar",
+                "www.lanacion.com.ar",
+                "www.lacapitalmdp.com.ar"
+            ]
+        },
+        {
+            "tema":"Dolar",
+            "fecha":"03/07/2022",
+            "titulo":"Como pagar en el exterior",
+            "descripcion":"Link a los mejores videos",
+            "url":[
+                "www.clarin.com.ar",
+                "www.lanacion.com.ar",
+                "www.lacapitalmdp.com.ar"
+            ]
+        }
+    ]
+}
