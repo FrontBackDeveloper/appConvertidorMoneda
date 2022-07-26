@@ -1,0 +1,29 @@
+{
+    "data":[
+    {
+        "autor": " clarin",
+        "titulo": "viaje por el mundo",
+        "descripcion": "blablamlalalalmalmlamlamlam",
+        "url":"www.clarin.com.ar",
+        "pais":"argentina",
+        "fecha":"2022-07-07"
+    },
+    {
+        "autor": "La nacion",
+        "titulo": "dolar blue",
+        "descripcion": "blablamlalalalmalmlamlamlam",
+        "url":"www.la nacion.com.ar",
+        "pais":"argentina",
+        "fecha":"2022-10-07"
+    },
+    {
+        "autor": "la capital",
+        "titulo": "inflacion",
+        "descripcion": "blablamlalalalmalmlamlamlam",
+        "url":"www.lacapiatalmdp.com.ar",
+        "pais":"argentina",
+        "fecha":"2022-27-07"
+    }
+
+]
+}
