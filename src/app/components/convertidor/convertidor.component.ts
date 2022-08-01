@@ -41,63 +41,49 @@ cotizacion:number = 1;
 cotizacionEnviada?:number;
 titulo:string = "Euro Oficial Banco Nación";
 
+
 constructor(private ApiService: ApiCotizacionesService) {
 
 }
 
 ngOnInit(): void {
-this.ApiService.obtenerDolarOficial().subscribe(
-(data:ICotizaciones) => {
-this.infoDolarOficial = data;
-console.log("datos del API" + data);
-}
-);
-this.ApiService.obtenerDolarBlue().subscribe(
-(dataDOB:ICotizaciones) => { 
-this.infoDolarBlue = dataDOB;
-console.log("datos del API" + dataDOB);
+          this.ApiService.obtenerDolarOficial().subscribe(
+          (data:ICotizaciones) => {
+          this.infoDolarOficial = data;
+          
+          }
+          );
+          this.ApiService.obtenerDolarBlue().subscribe(
+          (dataDOB:ICotizaciones) => { 
+          this.infoDolarBlue = dataDOB;
+          
+          }
+          );   
+          this.ApiService.obtenerEuroOficial().subscribe(
+          (dataEUOF:any) => { 
+          this.infoEuroOficial = dataEUOF;
+          
+          }
+          );
+          this.ApiService.obtenerDolarBBVA().subscribe(
+          (dataBBVA:any) => { 
+          this.infoDolarBBVA = dataBBVA;
+          
+          }
+          );
+          this.ApiService.obtenerDolarGalicia().subscribe(
+          (dataGAL:any) => { 
+          this.infoDolarGalicia = dataGAL;
+         
+          }
+          );
 
-}
-);   
-this.ApiService.obtenerEuroOficial().subscribe(
-(dataEUOF:any) => { 
-this.infoEuroOficial = dataEUOF;
-console.log("datos del API" + dataEUOF);
+          }
 
-}
-);
-this.ApiService.obtenerDolarBBVA().subscribe(
-(dataBBVA:any) => { 
-this.infoDolarBBVA = dataBBVA;
-console.log("datos del API" + dataBBVA);
+calcular(titulo:string, cotizacionEnviada:number){
+          this.titulo=titulo;
+          this.cotizacion=cotizacionEnviada;
 
-}
-);
-this.ApiService.obtenerDolarGalicia().subscribe(
-(dataGAL:any) => { 
-this.infoDolarGalicia = dataGAL;
-console.log("datos del API" + dataGAL);
-}
-);
-
-}
-
-calcularEOF(titulo:string, cotizacionEnviada:number){
-this.titulo=titulo;
-this.cotizacion=cotizacionEnviada;
-
-}
-calcularDOF(titulo:string, cotizacionEnviada:number){ 
-this.titulo=titulo;
-this.cotizacion=cotizacionEnviada;
-}
-calcularDOT(titulo:string, cotizacionEnviada:number){ 
-  this.titulo=titulo;
-  this.cotizacion=cotizacionEnviada;
-}
-calcularBL(titulo:string, cotizacionEnviada:number){  
-this.titulo=titulo;
-this.cotizacion=cotizacionEnviada;
-}
+          }
 
 }

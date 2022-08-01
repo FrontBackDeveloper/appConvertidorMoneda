@@ -15,14 +15,10 @@ export class NoticiasService {
   obtenerNoticias():Observable<any>{
     const params = new HttpParams()
                   .set('access_key', this.tokenApi)
-                  .set('date','2022-07-01,2022-07-26')
-                  .set('sources','cnn')
                   .set('languajes','es')
                   .set('countries','ar')
-                  .set('keywords', 'dolar');
+                  .set('keywords', 'dolar turista');
 
     return this.http.get<any>(this.urlBase, {params})
-
-
   }
 }
