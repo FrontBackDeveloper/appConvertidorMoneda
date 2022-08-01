@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NoticiasService } from 'src/app/servicios/noticias.service';
+import { INoticia } from 'src/assets/data/INoticia';
 
 @Component({
   selector: 'app-novedades',
@@ -8,13 +9,15 @@ import { NoticiasService } from 'src/app/servicios/noticias.service';
 })
 export class NovedadesComponent implements OnInit {
 
+  noticiasList:any[]=[];
 
   constructor(private noticiasSVC:NoticiasService) { }
 
   ngOnInit(): void {
     this.noticiasSVC.obtenerNoticias().subscribe(
-      (data) => {
-      console.log("datos del API mediastack " + data);
+      (data:any) => {
+        this.noticiasList=data.data;
+      console.log("datos del API mediastack " + data.data.author);
       }
       );
   }
