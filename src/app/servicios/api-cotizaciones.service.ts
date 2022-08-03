@@ -28,4 +28,7 @@ export class ApiCotizacionesService {
   obtenerDolarGalicia(): Observable<any>{
     return this.http.get<ICotizaciones>(this.urlBase + "/galicia");
   }
+  obtenerDolarXBanco(nombre:string): Observable<any>{
+    return this.http.get<ICotizaciones>(this.urlBase + "/" + nombre);
+  }
 }
