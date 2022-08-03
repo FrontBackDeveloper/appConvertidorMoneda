@@ -16,8 +16,9 @@ export class NoticiasService {
     const params = new HttpParams()
                   .set('access_key', this.tokenApi)
                   .set('languajes','es')
+                  .set('sources','-elsolquilmes, -diariodecuyo, -primeraedicionweb, -Iv7, -laopinion, -elretratodehoy, -genteba, -losandes')
                   .set('countries','ar')
-                  .set('keywords', 'dolar turista');
+                  .set('keywords', 'dolar + turista');
 
     return this.http.get<any>(this.urlBase, {params})
   }

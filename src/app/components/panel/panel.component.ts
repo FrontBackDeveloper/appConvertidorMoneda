@@ -34,11 +34,17 @@ export class PanelComponent implements OnInit {
                       "compra": 0,
                       "venta":0
                     };
+  infoDolarXBanco= {
+                      "fecha":"",
+                      "compra": 0,
+                      "venta":0
+                    };                 
 
   valoringresado:number =1;
   cotizacion:number = 1;
   cotizacionEnviada?:number;
   titulo:string = "Euro Oficial Banco Nación";
+  opcionBancos:string = "nacion";
 
   constructor(private ApiService: ApiCotizacionesService) {
                 
@@ -79,6 +85,17 @@ export class PanelComponent implements OnInit {
       }
     );
    
+  }
+
+  buscarBanco(nombre:string){
+    this.ApiService.obtenerDolarXBanco(nombre).subscribe(
+      (data:any) => { 
+        this.infoDolarXBanco = data;
+        console.log("datos del API" + data);
+      }
+    );
+    console.log(nombre);
+
   }
 
   calcularEOF(titulo:string, cotizacionEnviada:number){
