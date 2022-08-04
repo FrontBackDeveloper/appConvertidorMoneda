@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiCotizacionesService } from 'src/app/servicios/api-cotizaciones.service';
 import { ICotizaciones } from 'src/data/ICotizaciones';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-panel',
@@ -15,6 +16,21 @@ export class PanelComponent implements OnInit {
                     };
 
   infoDolarBlue= {
+                    "fecha":"",
+                    "compra": 0,
+                    "venta":0
+                  };
+  infoDolarCCL= {
+                    "fecha":"",
+                    "compra": 0,
+                    "venta":0
+                  };
+  infoDolarPromedio= {
+                    "fecha":"",
+                    "compra": 0,
+                    "venta":0
+                  };
+  infoDolarBolsa= {
                     "fecha":"",
                     "compra": 0,
                     "venta":0
@@ -45,6 +61,7 @@ export class PanelComponent implements OnInit {
   cotizacionEnviada?:number;
   titulo:string = "Euro Oficial Banco Nación";
   opcionBancos:string = "nacion";
+  
 
   constructor(private ApiService: ApiCotizacionesService) {
                 
@@ -61,6 +78,27 @@ export class PanelComponent implements OnInit {
       (dataDOB:ICotizaciones) => { 
         this.infoDolarBlue = dataDOB;
         console.log("datos del API" + dataDOB);
+      
+      }
+    );   
+    this.ApiService.obtenerDolarCCL().subscribe(
+      (data:ICotizaciones) => { 
+        this.infoDolarCCL = data;
+        console.log("datos del API" + data);
+      
+      }
+    );   
+    this.ApiService.obtenerDolarPromedio().subscribe(
+      (data:ICotizaciones) => { 
+        this.infoDolarPromedio = data;
+        console.log("datos del API" + data);
+      
+      }
+    );   
+    this.ApiService.obtenerDolarBolsa().subscribe(
+      (data:ICotizaciones) => { 
+        this.infoDolarBolsa = data;
+        console.log("datos del API" + data);
       
       }
     );   
@@ -87,7 +125,7 @@ export class PanelComponent implements OnInit {
    
   }
 
-  buscarBanco(nombre:string){
+  buscarXBanco(nombre:string){
     this.ApiService.obtenerDolarXBanco(nombre).subscribe(
       (data:any) => { 
         this.infoDolarXBanco = data;

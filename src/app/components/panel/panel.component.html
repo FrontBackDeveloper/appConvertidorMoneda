@@ -1,5 +1,5 @@
 <div class="container">
-  <h4>Cotizacion de monedas actualizadas al día: {{infoDolarOficial.fecha | date: 'fullDate'}} </h4>
+  <h4>Cotización de monedas más importantes</h4>
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -23,7 +23,7 @@
             <br>
           </div>
           <div class="card-footer text-muted">
-            Actualizado al: {{infoEuroOficial.fecha | date:'fullDate' }}
+            Actualizado al: {{infoEuroOficial.fecha | date:'fullDate':'es' }}
           </div>
         </div>
       </div>
@@ -73,11 +73,11 @@
           <div class="card-body"  >
             <h5 class="card-title">Dolar Tarjeta</h5>
             <p class="card-text">incluye imp. Pais + Percepciones</p>
-            <p class="card-text">{{infoDolarOficial.venta * 1.65}} </p>
+            <p class="card-text">{{infoDolarOficial.venta * 1.75 | number: '.0-2'}} </p>
            
              <!-- Button trigger modal -->
              <br>
-             <button type="button" routerLink="/convertidor" (click)="calcularDOT('Dolar Tarjeta', (infoDolarOficial.venta * 1.65))" class="btn btn-primary" >Calcular</button>
+             <button type="button" routerLink="/convertidor" (click)="calcularDOT('Dolar Tarjeta', (infoDolarOficial.venta * 1.75))" class="btn btn-primary" >Calcular</button>
              <br>
             </div>
           <div class="card-footer text-muted">
@@ -96,37 +96,80 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-<!-- BARRA DE BUSQUEDA DE OTRAS COTIZACIONES-->
-<h4>Buscar Cotizaciones de Bancos</h4><hr>
-<select class="form-select" aria-label="Default select example" name="opcionBancos" [(ngModel)]="opcionBancos">
-  <option selected>Buscar cotizaciones de Bancos</option>
-  <option value="nacion">Banco Nación</option>
-  <option value="galicia">Banco Galicia</option>
-  <option value="piano">Banco Piano</option>
-  <option value="hipotecario">Banco Hipotecario</option>
-  <option value="santander">Banco Santander</option>
-  <option value="ciudad">Banco Ciudad</option>
-  <option value="superville">Banco  Superville</option>
-  <option value="patagonia">Banco Patagonia</option>
-  <option value="comafi">Banco Comafi</option>
-  <option value="bind">Banco Bind</option>
-  <option value="bancor">Banco Bancor</option>
-  <option value="chaco">Banco Chaco</option>
-  <option value="pampa">Banco Pampa</option>
-</select>
-<button class="btn btn-dark" (click)="buscarBanco(opcionBancos)">Buscar</button>
+<!-- BARRA DE BUSQUEDA DE COTIZACIONES X BANCO-->
+<br>
+<h4>Buscar cotización Dólar / Euro / Real / Casas de Cambio</h4><hr>
+<div class="input-group mb-3">
+  <label class="btn btn-dark input-group-text" for="inputGroupSelect01" (click)="buscarXBanco(opcionBancos)">Buscar</label>
+  <select class="form-select" id="inputGroupSelect01" name="opcionBancos" [(ngModel)]="opcionBancos">
+   
+    <option value="Nacion">Dólar Banco Nación</option>
+    <option value="Galicia">Dólar Banco Galicia</option>
+    <option value="Piano">Dólar Banco Piano</option>
+    <option value="Hipotecario">Dólar Banco Hipotecario</option>
+    <option value="Santander">Dólar Dólar Banco Santander</option>
+    <option value="Ciudad">Banco Ciudad</option>
+    <option value="Supervielle">Dólar Banco  Supervielle</option>
+    <option value="Patagonia">Dólar Banco Patagonia</option>
+    <option value="Comafi">Dólar Banco Comafi</option>
+    <option value="Bind">Dólar Banco Bind</option>
+    <option value="Bancor">Dólar Banco Bancor</option>
+    <option value="Chaco">Dólar Banco Chaco</option>
+    <option value="Pampa">Dólar Banco Pampa</option>
 
-<table class="table table-dark table-striped">
+    <option value="euro/nacion">Euro del Banco Nación</option>
+    <option value="euro/galicia">Euro del Banco Galicia</option>
+    <option value="euro/bbva">Euro del Banco BBVA</option>
+    <option value="euro/pampa">Euro del Banco de La Pampa</option>
+    <option value="euro/chaco">Euro del Banco del Chaco</option>
+    <option value="euro/hipotecario">Euro del Banco Hipotecario</option>
+
+    <option value="real/nacion">Real del Banco Nación</option>
+    <option value="real/bbva">Real del Banco BBVA</option>
+    <option value="real/chaco">Real del Banco del Chaco</option>
+
+    <option value="casas/mdp/jonestur">Dólar Jonestur S.A</option>
+    <option value="casas/mdp/moneta">Dólar La Moneta Cambio S.A</option>
+    <option value="casas/mdp/exchange">Dólar Mar del Plata Exchange S.A</option>
+    <option value="casas/caba/alpe">Dólar Cambio Alpe S.A</option>
+    <option value="casas/caba/metropolis">Dólar Metrópolis Compañía Financiera S.A</option>
+    <option value="casas/caba/vaccaro">DólarFrancisco Vaccaro S.A</option>
+    <option value="casas/caba/transatlantica">Dólar Transatlantica S.A</option>
+    <option value="casas/lp/tilos">Dólar Casa de Cambio Los Tilos S.A</option>
+    <option value="casas/rosario/daminato">Dólar Daminato Viajes y Cambios S.A.</option>
+    <option value="casas/mendoza/montemar">Dólar Montemar Compañía Financiera S.A</option>
+    <option value="casas/tucuman/maguitur">Dólar Maguitur S.A</option>
+
+  </select>
+</div>
+<!---
+<select class="form-select" aria-label="Default select example" name="opcionBancos" [(ngModel)]="opcionBancos">
+  
+  <option value="nacion">Banco Nación</option>
+  <option value="Galicia">Banco Galicia</option>
+  <option value="Piano">Banco Piano</option>
+  <option value="Hipotecario">Banco Hipotecario</option>
+  <option value="Santander">Banco Santander</option>
+  <option value="Ciudad">Banco Ciudad</option>
+  <option value="Superville">Banco  Superville</option>
+  <option value="Patagonia">Banco Patagonia</option>
+  <option value="Comafi">Banco Comafi</option>
+  <option value="Bind">Banco Bind</option>
+  <option value="Bancor">Banco Bancor</option>
+  <option value="Chaco">Banco Chaco</option>
+  <option value="Pampa">Banco Pampa</option>
+</select>
+<button class="btn btn-dark" (click)="buscarXBanco(opcionBancos)">Buscar</button>
+-->
+<table class="table table-dark table-striped" *ngIf="infoDolarXBanco.compra != 0">
   <thead>
     <tr>
-      <th scope="col">Banco</th>
       <th scope="col">Compra</th>
       <th scope="col">Venta</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>{{opcionBancos}}</td>
       <td>{{infoDolarXBanco.compra}}</td>
       <td>{{infoDolarXBanco.venta}}</td>
     </tr>
@@ -147,24 +190,29 @@
         </thead>
         <tbody>
           <tr>
-            <td>Dolar Banco Galicia</td>
-            <td>{{infoDolarGalicia?.compra}}</td>
-            <td>{{infoDolarGalicia?.venta}}</td>
+            <td>Dolar Blue</td>
+            <td>{{infoDolarBlue.compra}}</td>
+            <td>{{infoDolarBlue.venta}}</td>
           </tr>
           <tr>
-            <td>Dolar Banco BBVA</td>
-            <td>{{infoDolarBBVA?.compra}}</td>
-            <td>{{infoDolarBBVA?.venta}}</td>
+            <td>Dolar Tarjeta / Turista</td>
+            <td>{{infoDolarOficial.compra * 1.75 | number: '.0-2'}}</td>
+            <td>{{infoDolarOficial.venta * 1.75 | number: '.0-2'}}</td>
           </tr>
           <tr >
-            <td>Dolar Oficial Bco Nación</td>
-            <td>{{infoDolarOficial?.compra}}</td>
-            <td>{{infoDolarOficial?.venta}}</td>
+            <td>Dolar Contado con Liqui</td>
+            <td>{{infoDolarCCL.compra}}</td>
+            <td>{{infoDolarCCL.venta}}</td>
           </tr>
           <tr>
-            <td>Euro Oficial Bco Nación</td>
-            <td>{{infoEuroOficial?.compra}}</td>
-            <td>{{infoEuroOficial?.venta}}</td>
+            <td>Dolar Promedio</td>
+            <td>{{infoDolarPromedio.compra}}</td>
+            <td>{{infoDolarPromedio.venta}}</td>
+          </tr>
+          <tr>
+            <td>Dolar Bolsa</td>
+            <td>{{infoDolarBolsa.compra}}</td>
+            <td>{{infoDolarBolsa.venta}}</td>
           </tr>
           
         </tbody>
