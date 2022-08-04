@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 
@@ -23,6 +23,11 @@ import { ComentariosComponent } from './components/comentarios/comentarios.compo
 import { LoginComponent } from './components/login/login.component';
 import { ItinerariosComponent } from './components/itinerarios/itinerarios.component';
 import { TipsypreguntasfrecuentesComponent } from './components/tipsypreguntasfrecuentes/tipsypreguntasfrecuentes.component';
+
+import localePy from '@angular/common/locales/es-PY';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localePy, 'es');
+
 
 @NgModule({
   declarations: [
@@ -49,7 +54,7 @@ import { TipsypreguntasfrecuentesComponent } from './components/tipsypreguntasfr
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ApiCotizacionesService],
+  providers: [ApiCotizacionesService, {provide: LOCALE_ID, useValue: 'es'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

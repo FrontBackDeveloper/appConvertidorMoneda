@@ -19,6 +19,16 @@ export class ApiCotizacionesService {
   obtenerDolarBlue(): Observable<any> {
     return this.http.get<ICotizaciones>(this.urlBase + "/dolarblue");
   }
+  obtenerDolarCCL(): Observable<any> {
+    return this.http.get<ICotizaciones>(this.urlBase + "/contadoliqui");
+  }
+  obtenerDolarPromedio(): Observable<any> {
+    return this.http.get<ICotizaciones>(this.urlBase + "/dolarpromedio");
+  }
+  obtenerDolarBolsa(): Observable<any> {
+    return this.http.get<ICotizaciones>(this.urlBase + "/dolarbolsa");
+  }
+
   obtenerEuroOficial(): Observable<any> {
     return this.http.get<ICotizaciones>(this.urlBase + "/euro/nacion");
   }
