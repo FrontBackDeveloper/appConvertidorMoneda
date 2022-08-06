@@ -25,18 +25,14 @@ infoEuroOficial= {
     "compra": 0,
     "venta":0
   };
-infoDolarBBVA= {
+infoDolarTurista= {
   "fecha":"",
   "compra": 0,
   "venta":0
 };
-infoDolarGalicia= {
-    "fecha":"",
-    "compra": 0,
-    "venta":0
-  };
 
 valoringresado:number =1;
+valorIngresadoEnPesos:number = 1;
 cotizacion:number = 1;
 cotizacionEnviada?:number;
 titulo:string = "Euro Oficial Banco Nación";
@@ -65,18 +61,13 @@ ngOnInit(): void {
           
           }
           );
-          this.ApiService.obtenerDolarBBVA().subscribe(
-          (dataBBVA:any) => { 
-          this.infoDolarBBVA = dataBBVA;
+          this.ApiService.obtenerDolarTurista().subscribe(
+          (data:any) => { 
+          this.infoDolarTurista = data;
           
           }
           );
-          this.ApiService.obtenerDolarGalicia().subscribe(
-          (dataGAL:any) => { 
-          this.infoDolarGalicia = dataGAL;
-         
-          }
-          );
+          
 
           }
 

@@ -35,6 +35,11 @@ export class PanelComponent implements OnInit {
                     "compra": 0,
                     "venta":0
                   };
+  infoDolarTurista= {
+                    "fecha":"",
+                    "compra": 0,
+                    "venta":0
+                  };
   infoEuroOficial= {
                       "fecha":"",
                       "compra": 0,
@@ -71,55 +76,52 @@ export class PanelComponent implements OnInit {
     this.ApiService.obtenerDolarOficial().subscribe(
       (data:ICotizaciones) => {
         this.infoDolarOficial = data;
-        console.log("datos del API" + data);
       }
     );
     this.ApiService.obtenerDolarBlue().subscribe(
       (dataDOB:ICotizaciones) => { 
         this.infoDolarBlue = dataDOB;
-        console.log("datos del API" + dataDOB);
       
       }
     );   
     this.ApiService.obtenerDolarCCL().subscribe(
       (data:ICotizaciones) => { 
         this.infoDolarCCL = data;
-        console.log("datos del API" + data);
       
       }
     );   
     this.ApiService.obtenerDolarPromedio().subscribe(
       (data:ICotizaciones) => { 
         this.infoDolarPromedio = data;
-        console.log("datos del API" + data);
-      
+       
       }
     );   
     this.ApiService.obtenerDolarBolsa().subscribe(
       (data:ICotizaciones) => { 
         this.infoDolarBolsa = data;
-        console.log("datos del API" + data);
-      
+      }
+    );   
+    this.ApiService.obtenerDolarTurista().subscribe(
+      (data:ICotizaciones) => { 
+        this.infoDolarTurista = data;
       }
     );   
     this.ApiService.obtenerEuroOficial().subscribe(
       (dataEUOF:any) => { 
         this.infoEuroOficial = dataEUOF;
-        console.log("datos del API" + dataEUOF);
-      
+        
       }
     );
     this.ApiService.obtenerDolarBBVA().subscribe(
       (dataBBVA:any) => { 
         this.infoDolarBBVA = dataBBVA;
-        console.log("datos del API" + dataBBVA);
-       
+        
       }
     );
     this.ApiService.obtenerDolarGalicia().subscribe(
       (dataGAL:any) => { 
         this.infoDolarGalicia = dataGAL;
-        console.log("datos del API" + dataGAL);
+        
       }
     );
    
