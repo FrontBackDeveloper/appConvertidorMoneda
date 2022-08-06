@@ -42,7 +42,7 @@
              <br>
             </div>
           <div class="card-footer text-muted">
-            Actualizado al: {{infoDolarOficial.fecha | date:'fullDate'}}
+            Actualizado al: {{infoDolarOficial.fecha | date:'fullDate':'es'}}
           </div>
         </div>
       </div>
@@ -61,7 +61,7 @@
              <br>
             </div>
           <div class="card-footer text-muted">
-            Actualizado al: {{infoDolarBlue.fecha | date:'fullDate'}}
+            Actualizado al: {{infoDolarBlue.fecha | date:'fullDate':'es'}}
           </div>
         </div>
       </div>
@@ -73,15 +73,15 @@
           <div class="card-body"  >
             <h5 class="card-title">Dolar Tarjeta</h5>
             <p class="card-text">incluye imp. Pais + Percepciones</p>
-            <p class="card-text">{{infoDolarOficial.venta * 1.75 | number: '.0-2'}} </p>
+            <p class="card-text">{{infoDolarTurista.venta | number: '.0-2'}} </p>
            
              <!-- Button trigger modal -->
              <br>
-             <button type="button" routerLink="/convertidor" (click)="calcularDOT('Dolar Tarjeta', (infoDolarOficial.venta * 1.75))" class="btn btn-primary" >Calcular</button>
+             <button type="button" routerLink="/convertidor" (click)="calcularDOT('Dolar Tarjeta', (infoDolarTurista.venta))" class="btn btn-primary" >Calcular</button>
              <br>
             </div>
           <div class="card-footer text-muted">
-            Actualizado al: {{infoDolarOficial.fecha | date:'fullDate'}}
+            Actualizado al: {{infoDolarOficial.fecha | date:'fullDate':'es'}}
           </div>
         </div>
       </div>
@@ -178,8 +178,8 @@
           </tr>
           <tr>
             <td>Dolar Tarjeta / Turista</td>
-            <td>{{infoDolarOficial.compra * 1.75 | number: '.0-2'}}</td>
-            <td>{{infoDolarOficial.venta * 1.75 | number: '.0-2'}}</td>
+            <td>{{infoDolarTurista.compra}}</td>
+            <td>{{infoDolarTurista.venta | number: '.0-2'}}</td>
           </tr>
           <tr >
             <td>Dolar Contado con Liqui</td>

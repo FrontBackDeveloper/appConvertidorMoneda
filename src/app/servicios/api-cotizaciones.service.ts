@@ -28,6 +28,9 @@ export class ApiCotizacionesService {
   obtenerDolarBolsa(): Observable<any> {
     return this.http.get<ICotizaciones>(this.urlBase + "/dolarbolsa");
   }
+  obtenerDolarTurista(): Observable<any> {
+    return this.http.get<ICotizaciones>(this.urlBase + "/dolarturista");
+  }
 
   obtenerEuroOficial(): Observable<any> {
     return this.http.get<ICotizaciones>(this.urlBase + "/euro/nacion");
