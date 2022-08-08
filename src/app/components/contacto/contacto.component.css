@@ -1,0 +1,63 @@
+/*estilos de seccion formularios */
+
+.container-fluid{
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 auto;
+}
+.card{
+	width: 27rem;
+	margin: 60px auto;
+	background: rgb(115, 54, 196, 0.9);
+    padding: 40px 40px;
+    box-sizing: border-box;
+    border-radius: 7px;
+	flex-wrap: wrap;
+}
+
+input, textarea{
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 7px;
+	box-sizing: border-box;
+	font-size: 17px;
+	border:  none;
+}
+textarea {
+	min-height: 100px;
+	max-height: 200px;
+	max-width: 100%;
+}
+.tituloformulario{
+	color: #fff;
+	text-align: center;
+}
+.parrafoformulario{
+	color: #fff;
+	text-align: center;
+}
+p{
+	text-align: center;
+}
+h1{
+	text-align: center;
+	color: #fff;
+	background-color: aqua;
+}
+
+#boton {
+	background-color: #31384A;
+	color: #fff;
+	padding: 20px;
+	transition: 0.4s;
+}
+#boton:hover {
+	background: #34495E;
+	cursor: pointer;
+}
+.captcha{
+	text-align: center;
+}
