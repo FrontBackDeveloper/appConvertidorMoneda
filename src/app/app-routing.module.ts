@@ -11,6 +11,7 @@ import { ComentariosComponent } from './components/comentarios/comentarios.compo
 import { LoginComponent } from './components/login/login.component';
 import { ItinerariosComponent } from './components/itinerarios/itinerarios.component';
 import { TipsypreguntasfrecuentesComponent } from './components/tipsypreguntasfrecuentes/tipsypreguntasfrecuentes.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path: 'itinerarios', component:ItinerariosComponent},
   {path: 'tipsypreguntasfrecuentes', component:TipsypreguntasfrecuentesComponent},
   {path: 'nuevoPresupuesto', component:NuevoComponent},
-  {path: 'login',component:LoginComponent}
+  {path: 'login',component:LoginComponent},
+  {path: 'contacto', component:ContactoComponent}
 ];
 
 @NgModule({

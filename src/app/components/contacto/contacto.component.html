@@ -1,0 +1,41 @@
+<div class="container-fluid">
+ 
+    <div class="card">
+            <h2 class="tituloformulario">Contáctame</h2>
+            <p class="parrafoformulario">Complete el formulario y me contactaré con ud. a la brevedad</p>
+				
+              <form>
+                <div class="mb-3">
+                    <input type="text" placeholder="Nombre"  formControlName="nombre" class="form-control" 
+                    
+                    required>    
+                </div>
+ 
+				<div class="mb-3">
+                    <input type="text" placeholder="Teléfono"  formControlName="telefono" class="form-control" 
+                   
+                    required>    
+                </div>
+
+                <div class="mb-3">
+                    <input type="text" placeholder="email"  formControlName="email" class="form-control" 
+                    
+                    required>    
+                </div>
+                <div class="mb-3">
+                    <input type="text" placeholder="asunto"  formControlName="suntol" class="form-control" 
+                    
+                    required>    
+                </div>
+
+				<div class="mb-12">		
+					<textarea class="form-control" id="validationTextarea" formControlName="mensaje" placeholder="Escriba aquí su mensaje..." required></textarea> 
+                </div>    
+				<div class="d-grid gap-2">
+					<button  type="submit" class="btn btn-primary">Enviar</button>
+     			    <button routerLink="/home" class="btn btn-primary">Cancelar</button>
+				</div>     
+              </form>
+        </div>
+    </div>
+
