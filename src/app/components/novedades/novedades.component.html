@@ -1,18 +1,23 @@
 <div class="container-fluid">
+  <div class="col-12">
     <h4>Novedades sobre Dolar, viajes, costos y mucho mas para preparar un viaje al exterior...</h4>
-
+  </div>
+   
+  <div class="container">
     <div>
-        <ul *ngFor="let noticia of noticiasList">
-            <li><div class="card" style="width: 18rem;">
-                <a href="{{noticia.url}}" target="_blank"><img src="{{noticia.image}}" class="card-img-top" alt="imagen de una noticia"></a>
-                <div class="card-body">
-                  <h5 class="card-title">{{noticia.title}}</h5>
-                  <p class="card-text">{{noticia.description}}</p>
-                  <p class="card-text"><small class="text-muted">{{noticia.source}}</small></p>
-                </div>
+      <ul *ngFor="let noticia of noticiasList">
+          <li><div class="card" style="width: 18rem;">
+              <a href="{{noticia.url}}" target="_blank"><img src="{{noticia.image}}" class="card-img-top" alt="imagen de una noticia"></a>
+              <div class="card-body">
+                <h5 class="card-title">{{noticia.title}}</h5>
+                <p class="card-text">{{noticia.description}}</p>
+                <p class="card-text"><small class="text-muted">{{noticia.source}}</small></p>
               </div>
-            </li> 
-        </ul>
+            </div>
+          </li> 
+      </ul>
     </div>
+  </div>
+   
    
 </div>
