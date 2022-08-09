@@ -16,7 +16,7 @@
   
 }
 .card{
-    background: rgba(0, 0, 0, 0.2);
+    background:rgb(122, 183, 223);
 }
 .convertidor-moneda{
     text-align: center;
@@ -26,7 +26,8 @@
     box-shadow: 5px 15px 11px #00000030;
 }
 h4{
-    font-size: 18;
+    color: #fff;
+    text-align: center;
 }
 
 @media (max-width:400px) {

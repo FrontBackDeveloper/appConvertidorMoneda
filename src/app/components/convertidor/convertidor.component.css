@@ -16,12 +16,16 @@
   
 }
 .card{
-    background: rgba(0, 0, 0, 0.2);
+    background:rgb(122, 183, 223);
 }
 .convertidor-moneda{
     text-align: center;
     border-radius: 10px;
     margin-top: 15px;
     margin-bottom: 15px;
-    box-shadow: 5px 15px 11px #00000030;
+    box-shadow: 5px 5px 11px #a19a9a75;
+}
+h4{
+    color: #fff;
+    text-align: center;
 }
