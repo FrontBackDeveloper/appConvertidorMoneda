@@ -2,11 +2,22 @@
   <div class="col-12">
     <h4>Novedades sobre Dolar, viajes, costos y mucho mas para preparar un viaje al exterior...</h4>
   </div>
-   
+  <div class="menu_noticias">
+    <button type="button" class="btn btn-link">Novedades</button>
+    <button type="button" class="btn btn-link">Dolar</button>
+    <button type="button" class="btn btn-link">Tarjetas</button>
+    <button type="button" class="btn btn-link">Aéreos</button>
+    <button type="button" class="btn btn-link">Destinos</button>
+    <button type="button" class="btn btn-link">Blogs</button>
+    <button type="button" class="btn btn-link">Youtube</button>
+  </div>
+ 
   <div class="container">
-    <div>
-      <ul *ngFor="let noticia of noticiasList">
-          <li><div class="card" style="width: 18rem;">
+    <div class="row">
+      <div class="col-3">
+        <ul>
+          <li  *ngFor="let noticia of noticiasList">
+            <div class="card" style="width: 18rem;">
               <a href="{{noticia.url}}" target="_blank"><img src="{{noticia.image}}" class="card-img-top" alt="imagen de una noticia"></a>
               <div class="card-body">
                 <h5 class="card-title">{{noticia.title}}</h5>
@@ -15,7 +26,10 @@
               </div>
             </div>
           </li> 
-      </ul>
+        </ul>
+      </div>
+
+     
     </div>
   </div>
    
