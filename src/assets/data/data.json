@@ -1,28 +1,38 @@
 {
     "data":[
+
     {
-        "autor": " clarin",
-        "titulo": "viaje por el mundo",
-        "descripcion": "blablamlalalalmalmlamlamlam",
-        "url":"www.clarin.com.ar",
-        "pais":"argentina",
-        "fecha":"2022-07-07"
+        "id"          : 1,  
+        "author"      : "Natalí Rizzo",
+        "source"      : "Pagina/12",
+        "title"       : "Nuevo dólar para los turistas",
+        "description" : "El gobierno busca que se liquide en el mercado oficial",
+        "image"       : "https://images.pagina12.com.ar/styles/width960/public/2022-07/590334-5a-g0073620-pepe-20mateos.jpg?itok=k5D9K1zE",
+        "url"         : "https://www.pagina12.com.ar/438648-nuevo-dolar-para-los-turistas",
+        "pais"        : "argentina",
+        "published_at": "2022-07-20T21:10:07+00:00"
     },
     {
-        "autor": "La nacion",
-        "titulo": "dolar blue",
-        "descripcion": "blablamlalalalmalmlamlamlam",
-        "url":"www.la nacion.com.ar",
-        "pais":"argentina",
-        "fecha":"2022-10-07"
+        "id"          : 2, 
+        "author"      : "Leandro Renou",
+        "source"      : "Pagina/12",
+        "title"       : "CON EL DÓLAR ATADO",
+        "description" : "El gobierno busca que se liquide en el mercado oficial",
+        "image"       : "https://images.pagina12.com.ar/styles/width960/public/rest_images/na01fo01_2296.jpg?itok=ZNlILaNY",
+        "url"         : "https://www.pagina12.com.ar/439071-la-rebelion-de-los-ganadores",
+        "pais"        : "argentina",
+        "published_at": "2022-07-22T04:01:32+00:00"
     },
     {
-        "autor": "la capital",
-        "titulo": "inflacion",
-        "descripcion": "blablamlalalalmalmlamlamlam",
-        "url":"www.lacapiatalmdp.com.ar",
-        "pais":"argentina",
-        "fecha":"2022-27-07"
+        "id"          : 3, 
+        "author"      : "Pagina/12",
+        "source"      : "Pagina/12",
+        "title"       : "Dólar turista o dólar tarjeta: ¿cómo obtener el reintegro?",
+        "description" : "Paso a paso, todos los trámites",
+        "image"       : "https://images.pagina12.com.ar/styles/width960/public/2022-07/583198-42454-dolar-2520turista.jpeg?itok=0gnyZdZd",
+        "url"         : "https://www.pagina12.com.ar/437112-dolar-turista-o-dolar-tarjeta-como-obtener-el-reintegro",
+        "pais"        : "argentina",
+        "published_at": "2022-07-14T20:08:16+00:00"
     }
 
 ]
