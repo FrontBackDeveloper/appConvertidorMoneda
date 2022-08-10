@@ -12,6 +12,9 @@ import { LoginComponent } from './components/login/login.component';
 import { ItinerariosComponent } from './components/itinerarios/itinerarios.component';
 import { TipsypreguntasfrecuentesComponent } from './components/tipsypreguntasfrecuentes/tipsypreguntasfrecuentes.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { DetallesComponent } from './components/novedades/detalles/detalles.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { TerminosycondicionesComponent } from './components/terminosycondiciones/terminosycondiciones.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -19,13 +22,16 @@ const routes: Routes = [
   {path: 'convertidor', component:ConvertidorComponent},
   {path: 'presupuestos', component:PresupuestoComponent},
   {path: 'cotizaciones', component:PanelComponent},
-  {path: 'novedades', component:NovedadesComponent},
+  {path: 'novedades', component:NovedadesComponent,
+         children:[{path: 'detalles', component:DetallesComponent}]},
   {path: 'comentarios', component:ComentariosComponent},
   {path: 'itinerarios', component:ItinerariosComponent},
   {path: 'tipsypreguntasfrecuentes', component:TipsypreguntasfrecuentesComponent},
   {path: 'nuevoPresupuesto', component:NuevoComponent},
   {path: 'login',component:LoginComponent},
-  {path: 'contacto', component:ContactoComponent}
+  {path: 'contacto', component:ContactoComponent},
+  {path: 'terminosycondiciones', component:TerminosycondicionesComponent},
+  {path: '**', component:NotfoundComponent}
 ];
 
 @NgModule({

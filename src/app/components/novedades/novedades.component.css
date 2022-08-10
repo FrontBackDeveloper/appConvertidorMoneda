@@ -1,11 +1,12 @@
-
+.detalles{
+   padding: 30px;
+}
 .container-fluid{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 0 auto;
     padding: 50px;
-    background-color: black;
 }
 .container{
     display: flex;
