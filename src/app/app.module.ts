@@ -27,6 +27,9 @@ import { TipsypreguntasfrecuentesComponent } from './components/tipsypreguntasfr
 import localePy from '@angular/common/locales/es-PY';
 import { registerLocaleData } from '@angular/common';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { DetallesComponent } from './components/novedades/detalles/detalles.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { TerminosycondicionesComponent } from './components/terminosycondiciones/terminosycondiciones.component';
 registerLocaleData(localePy, 'es');
 
 
@@ -47,7 +50,10 @@ registerLocaleData(localePy, 'es');
     LoginComponent,
     ItinerariosComponent,
     TipsypreguntasfrecuentesComponent,
-    ContactoComponent
+    ContactoComponent,
+    DetallesComponent,
+    NotfoundComponent,
+    TerminosycondicionesComponent
   ],
   imports: [
     BrowserModule,

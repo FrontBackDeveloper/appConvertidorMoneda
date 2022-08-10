@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="card" style="width: 18rem;" *ngFor="let noticia of noticiasList">
+            <a href="{{noticia.url}}" target="_blank"><img src="{{noticia.image}}" class="card-img-top" alt="imagen de una noticia"></a>
+       <div class="card-body">
+            <h5 class="card-title">{{noticia.title}}</h5>
+            <p class="card-text">{{noticia.description}}</p>
+            <div class="row">
+                   <div class="col">
+                         <p class="card-text"><small class="text-muted">{{noticia.source}}</small></p>
+                   </div>
+                   <div class="col">
+                          <p class="card-text"><small class="text-muted">{{noticia.published_at | date:'mediumDate':'es'}}</small></p>
+                   </div>
+             </div>
+        </div>
+      </div>
+</div>
+
+
+      
