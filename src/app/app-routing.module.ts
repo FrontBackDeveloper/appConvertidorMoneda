@@ -15,6 +15,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { DetallesComponent } from './components/novedades/detalles/detalles.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { TerminosycondicionesComponent } from './components/terminosycondiciones/terminosycondiciones.component';
+import { EdicionComponent } from './components/edicion/edicion.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path: 'login',component:LoginComponent},
   {path: 'contacto', component:ContactoComponent},
   {path: 'terminosycondiciones', component:TerminosycondicionesComponent},
+  {path: 'edicion', component:EdicionComponent},
   {path: '**', component:NotfoundComponent}
 ];
 

@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NuevoComponent } from './components/presupuesto/nuevo/nuevo.component';
 
 import { ApiCotizacionesService } from './servicios/api-cotizaciones.service';
+import { AuthService } from './servicios/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -30,6 +31,8 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { DetallesComponent } from './components/novedades/detalles/detalles.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { TerminosycondicionesComponent } from './components/terminosycondiciones/terminosycondiciones.component';
+import { EdicionComponent } from './components/edicion/edicion.component';
+
 registerLocaleData(localePy, 'es');
 
 
@@ -53,7 +56,8 @@ registerLocaleData(localePy, 'es');
     ContactoComponent,
     DetallesComponent,
     NotfoundComponent,
-    TerminosycondicionesComponent
+    TerminosycondicionesComponent,
+    EdicionComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,7 @@ registerLocaleData(localePy, 'es');
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ApiCotizacionesService, {provide: LOCALE_ID, useValue: 'es'}],
+  providers: [ApiCotizacionesService, AuthService, {provide: LOCALE_ID, useValue: 'es'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

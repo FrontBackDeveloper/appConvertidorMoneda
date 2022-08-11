@@ -1,0 +1,52 @@
+/*estilos de seccion formularios */
+
+.container-fluid{
+	background: #34495E;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 auto;
+}
+.card{
+	width: 27rem;
+	margin: 100px auto;
+	background: rgba(0, 0, 0, 0.4);
+    padding: 70px 70px;
+    box-sizing: border-box;
+    border-radius: 7px;
+	flex-wrap: wrap;
+}
+
+textarea {
+	min-height: 100px;
+	max-height: 200px;
+	max-width: 100%;
+}
+.tituloformulario{
+	color: #fff;
+	text-align: center;
+}
+.parrafoformulario{
+	color: #fff;
+	text-align: center;
+}
+p{
+	text-align: center;
+}
+label{
+	text-align: center;
+	color: #fff;
+}
+.form-check-input{
+	display: inline;
+}
+#boton {
+	background-color: #31384A;
+	color: #fff;
+	padding: 20px;
+	transition: 0.4s;
+}
+#boton:hover {
+	background: #34495E;
+	cursor: pointer;
+}
