@@ -16,6 +16,7 @@ import { DetallesComponent } from './components/novedades/detalles/detalles.comp
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { TerminosycondicionesComponent } from './components/terminosycondiciones/terminosycondiciones.component';
 import { EdicionComponent } from './components/edicion/edicion.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -32,7 +33,7 @@ const routes: Routes = [
   {path: 'login',component:LoginComponent},
   {path: 'contacto', component:ContactoComponent},
   {path: 'terminosycondiciones', component:TerminosycondicionesComponent},
-  {path: 'edicion', component:EdicionComponent},
+  {path: 'edicion', canActivate: [AuthGuard], component:EdicionComponent},
   {path: '**', component:NotfoundComponent}
 ];
 

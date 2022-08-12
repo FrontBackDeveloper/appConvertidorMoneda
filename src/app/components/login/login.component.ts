@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.form.value).subscribe(
       (response: Boolean) => {
         if (response){
+          window.location.reload();
           this.router.navigate(['/home']);
         
         }
