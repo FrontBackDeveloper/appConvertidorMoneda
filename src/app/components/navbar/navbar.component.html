@@ -1,11 +1,5 @@
 <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
-     <!--
-      <a class="navbar-brand" href="#">
-        <img src="../../../assets/monedaAnimada.gif" alt="Logotipo" width="30" height="30" class="d-inline-block align-text-top">
-        <p>Presupuesta tu viaje al exterior</p>
-      </a>
-        -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -49,10 +43,10 @@
             <a class="nav-link" routerLink="/login"><b><i class="fa fa-sign-in"></i> Iniciar Sesión</b></a>
           </li>
           <li class="nav-item" *ngIf="isUserLogged">
-            <a class="nav-link" routerLink="/edicion" style="color: yellow;"><b><i class="fa fa-pen"></i> Edición de contenido</b></a>
+            <a class="nav-link" routerLink="/edicion" style="color: yellow;"><b><i class="fa fa-pencil"></i> Edición de contenido</b></a>
           </li>
           <li class="nav-item" *ngIf="isUserLogged">
-            <a class="nav-link" routerLink="/home" (click)="logout()"><b><i class="fa fa-sign-in"></i> Cerrar Sesión</b></a>
+            <a class="nav-link" routerLink="/home" (click)="logout()"><b><i class="fa fa-sign-out"></i> Cerrar Sesión</b></a>
           </li>
         </ul>
       </div>
