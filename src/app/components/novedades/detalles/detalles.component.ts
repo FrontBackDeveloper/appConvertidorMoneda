@@ -17,7 +17,7 @@ export class DetallesComponent implements OnInit {
     this.noticiasSVC.obtenerNoticias().subscribe(
       (data:any) => {
         this.noticiasList=data.data;
-      console.log("datos del API mediastack " + data.data.author);
+      console.log('data');
       }
       );
   }

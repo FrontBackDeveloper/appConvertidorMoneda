@@ -47,6 +47,10 @@ p{
     transform: scale(1.05);
       box-shadow: 1px 1px 11px #fff;
 }
+h4{
+    color: #fff;
+    margin-left: 130px;
+}
 h1{
     font-size: 80px;
     text-align: center;

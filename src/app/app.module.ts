@@ -32,6 +32,8 @@ import { DetallesComponent } from './components/novedades/detalles/detalles.comp
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { TerminosycondicionesComponent } from './components/terminosycondiciones/terminosycondiciones.component';
 import { EdicionComponent } from './components/edicion/edicion.component';
+import { ListaComentariosComponent } from './components/comentarios/lista-comentarios/lista-comentarios.component';
+
 
 registerLocaleData(localePy, 'es');
 
@@ -57,7 +59,8 @@ registerLocaleData(localePy, 'es');
     DetallesComponent,
     NotfoundComponent,
     TerminosycondicionesComponent,
-    EdicionComponent
+    EdicionComponent,
+    ListaComentariosComponent
   ],
   imports: [
     BrowserModule,
