@@ -1,7 +1,9 @@
-/*estilos de seccion formularios */
 
 .container-fluid{
-	background: #34495E;
+	background-image: url(../../../assets/fondo_mapa_2.jpg);
+	background-size: 100vw 100vh;
+	background-attachment: fixed;
+	background-position: center;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -10,43 +12,12 @@
 .card{
 	width: 27rem;
 	margin: 100px auto;
-	background: rgba(0, 0, 0, 0.4);
-    padding: 70px 70px;
+	background: rgba(50, 52, 53, 0.253);
+    padding: 60px 40px;
     box-sizing: border-box;
     border-radius: 7px;
 	flex-wrap: wrap;
 }
-
-textarea {
-	min-height: 100px;
-	max-height: 200px;
-	max-width: 100%;
-}
-.tituloformulario{
-	color: #fff;
+h2{
 	text-align: center;
-}
-.parrafoformulario{
-	color: #fff;
-	text-align: center;
-}
-p{
-	text-align: center;
-}
-label{
-	text-align: center;
-	color: #fff;
-}
-.form-check-input{
-	display: inline;
-}
-#boton {
-	background-color: #31384A;
-	color: #fff;
-	padding: 20px;
-	transition: 0.4s;
-}
-#boton:hover {
-	background: #34495E;
-	cursor: pointer;
 }

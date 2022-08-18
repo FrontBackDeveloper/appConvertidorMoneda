@@ -18,16 +18,12 @@
               <input type="hidden" name="nombre_usuario" formControlName="nombre_usuario">
               <input type="hidden" name="foto_perfil" formControlName="foto_perfil">
               <div class="mb-3">
-                      <textarea placeholder="Escriba aquí su comentario..." name="texto" formControlName="texto" class="form-control"
-                      [ngClass]="{'is-invalid':Texto?.errors && Texto?.touched, 'is-valid': !Texto?.errors && Texto?.touched }"
-                      required></textarea>
-              </div>     
-              <!--- MENSAJE DE ERRORES DE FORMULARIO-->          
+                      <textarea placeholder="Escriba aquí su comentario..." name="texto" formControlName="texto" class="form-control"></textarea>
+              </div>              
               <div *ngIf="Texto?.touched && Texto?.errors">
-               
-                  <span *ngIf="Texto?.hasError('required')" class="text-danger">El campo no puede estar vacío</span>
-                  <span *ngIf="Texto?.hasError('maxLength')" class="text-danger">El máximo de caracteres permitidos es 200</span>
-               
+                  <div *ngIf="Texto?.hasError('required')" class="container alert alert-danger" role="alert" >¡ El campo no puede estar vacío !</div>
+                  <div *ngIf="Texto?.hasError('minlength')" class="container alert alert-info" role="alert" >! El mínimo de caracteres aceptados es 10 !</div>
+                  <div *ngIf="Texto?.hasError('maxlength')" class="container alert alert-danger" role="alert" >¡ El máximo de caracteres permitidos es 100 !</div>
               </div>
               <input type="hidden" name="fecha_publicado" formControlName="fecha_publicado">
               <div class="d-grid gap-2">

@@ -47,9 +47,9 @@ p{
     transform: scale(1.05);
       box-shadow: 1px 1px 11px #fff;
 }
-h4{
-    color: #fff;
-    margin-left: 130px;
+a{
+    font-size: 20px;
+    margin-left: 15px;
 }
 h1{
     font-size: 80px;

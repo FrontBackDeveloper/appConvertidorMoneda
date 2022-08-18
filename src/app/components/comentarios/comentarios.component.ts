@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ComentariosService } from 'src/app/servicios/comentarios.service';
 import { Router } from '@angular/router';
+import { IComentarios } from 'src/data/IComentarios';
 
 @Component({
   selector: 'app-comentarios',
@@ -10,20 +11,23 @@ import { Router } from '@angular/router';
 })
 export class ComentariosComponent implements OnInit {
 
+  isUserLogged: Boolean = false;
+  comentariosList: IComentarios[] = [];
   formComentarios: FormGroup;
   isAlert = false;
+  fecha_actual = new Date();
 
   constructor( private formBuilder: FormBuilder,
                private comentariosSVC: ComentariosService,
                private router: Router) {
     this.formComentarios = this.formBuilder.group(
       {
-        id_comentario: ['', [Validators.required]],
-        id_usuario: ['', [Validators.required]],
-        nombre_usuario: ['', [Validators.required]],
-        foto_perfil: [''],
-        texto: ['', [Validators.required, Validators.maxLength(200)]],
-        fecha_publicado: ['date']
+        id_comentario: ['aquí va el id'],
+        id_usuario: ['aquí va el id_usuario gusrdado en coquie o Local Storage'],
+        nombre_usuario: ['aquí va el nombred_usuario gusrdado en coquie o Local Storage'],
+        foto_perfil: ['aquí va el foto_perfil gusrdado en coquie o Local Storage'],
+        texto: ['', [Validators.required, Validators.maxLength(100), Validators.minLength(10)]],
+        fecha_publicado: [this.fecha_actual]
       }
     )
    }
@@ -31,11 +35,21 @@ export class ComentariosComponent implements OnInit {
   ngOnInit(): void {
    
   }
-  public publicarComentario(event: Event){
-    
-    this.clearFormulario();
-    this.isAlert=true;
-    console.log("formulario de comentarios" + this.formComentarios.value);
+
+  reloadData() {
+    this.comentariosSVC.obtenerComentarios().subscribe(
+      (data:any) => {
+        this.comentariosList = data.data;
+      }
+    );
+   
+  }
+
+  publicarComentario(event: Event){
+   let comentario: IComentarios = this.formComentarios.value;
+   console.log(comentario);
+   this.isAlert=true;
+   this.clearFormulario();
    
   }
 
