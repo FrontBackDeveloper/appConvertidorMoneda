@@ -21,7 +21,7 @@ export class ComentariosService {
   obtenerComentarios():Observable<IComentarios>{
     return this.http.get<IComentarios>('../assets/data/comentarios.json')
   }
-  publicarComentario(formComentarios: IComentarios):Observable<IComentarios>{
+  agregarComentario(formComentarios: IComentarios):Observable<IComentarios>{
     return this.http.post<IComentarios>(this.urlBase + "/publicar" , formComentarios);
   }
   eliminarComentario(id_comentario: number): Observable<unknown> {

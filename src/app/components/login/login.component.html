@@ -3,9 +3,7 @@
    
     <div class="card">
         <h2 class="tituloformulario">Inicio de Sesión</h2>
-        <br>
             <hr>
-       
             <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
                 <div class="mb-3">
                         <input type="text" placeholder="Ingrese su email" name="email" formControlName="email" class="form-control" 
@@ -13,13 +11,13 @@
                         required>
                
                         <div *ngIf="Email?.errors && Email?.touched">
-                            <span *ngIf="Email?.hasError('required')" class="text-danger">El email es requerido.</span>
-                            <span *ngIf="Email?.hasError('email')" class="text-danger">El email ingresado no respeta el formato esperado.</span>
+                            <div *ngIf="Email?.hasError('email')" class="container alert alert-danger" role="alert">¡ El email ingresado no respeta el formato esperado !</div>
                         </div>
                 </div>               
                 <div class="mb-3">
                         <input type="password" placeholder="Ingrese su contraseña" name="password" formControlName="password" class="form-control" required>
-                        <div *ngIf="loginError" class="text-danger">Las credenciales ingresadas no existen en nuestros registros.</div>
+                        <div *ngIf="Password?.hasError('password')" class="container alert alert-info" role="alert">¡ El mínimo de caracteres debe ser 6 !</div>
+                        <div *ngIf="loginError" class="container alert alert-danger" role="alert">¡ Las credenciales ingresadas no existen en nuestros registros !</div>
                 </div> 
                 <div class="d-grid gap-2">
                         <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Iniciar sesión</button>
@@ -28,4 +26,4 @@
             </form>
     </div>
 </div>
-  
+ 
