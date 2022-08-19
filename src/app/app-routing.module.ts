@@ -17,6 +17,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { TerminosycondicionesComponent } from './components/terminosycondiciones/terminosycondiciones.component';
 import { EdicionComponent } from './components/edicion/edicion.component';
 import { AuthGuard } from './guards/auth.guard';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { EditarperfilComponent } from './components/perfil/editarperfil/editarperfil.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -34,6 +36,8 @@ const routes: Routes = [
   {path: 'contacto', component:ContactoComponent},
   {path: 'terminosycondiciones', component:TerminosycondicionesComponent},
   {path: 'edicion', canActivate: [AuthGuard], component:EdicionComponent},
+  {path: 'perfil',  component:PerfilComponent,
+          children:[{path: 'editarperfil', component: EditarperfilComponent }]},
   {path: '**', component:NotfoundComponent}
 ];
 

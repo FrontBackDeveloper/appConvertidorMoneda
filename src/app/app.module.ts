@@ -33,6 +33,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { TerminosycondicionesComponent } from './components/terminosycondiciones/terminosycondiciones.component';
 import { EdicionComponent } from './components/edicion/edicion.component';
 import { ListaComentariosComponent } from './components/comentarios/lista-comentarios/lista-comentarios.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { EditarperfilComponent } from './components/perfil/editarperfil/editarperfil.component';
 
 
 registerLocaleData(localePy, 'es');
@@ -60,7 +62,9 @@ registerLocaleData(localePy, 'es');
     NotfoundComponent,
     TerminosycondicionesComponent,
     EdicionComponent,
-    ListaComentariosComponent
+    ListaComentariosComponent,
+    PerfilComponent,
+    EditarperfilComponent
   ],
   imports: [
     BrowserModule,

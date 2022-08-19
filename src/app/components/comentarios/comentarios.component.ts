@@ -33,7 +33,8 @@ export class ComentariosComponent implements OnInit {
    }
 
   ngOnInit(): void {
-   
+  
+   this.reloadData();
   }
 
   reloadData() {
@@ -48,8 +49,10 @@ export class ComentariosComponent implements OnInit {
   publicarComentario(event: Event){
    let comentario: IComentarios = this.formComentarios.value;
    console.log(comentario);
-   this.isAlert=true;
-   this.clearFormulario();
+   if (confirm(" Enviado exitósamente !, desea volver a comentar?")){
+    this.clearFormulario();
+      this.reloadData();
+   }else this.router.navigate(['/home']);
    
   }
 
