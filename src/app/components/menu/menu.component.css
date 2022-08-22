@@ -58,8 +58,9 @@ h1{
     font-family: Trebuchet MS;
 }
 @media (max-width: 400px){
-    h1{
-      font-size: 40px;
+    .col-12 h1{
+      font-size: 30px;
+      
     }
   
 }
