@@ -57,6 +57,9 @@ h1{
     color: darkorange;
     font-family: Trebuchet MS;
 }
+h5{
+    color: darkorange;
+}
 @media (max-width: 400px){
     .col-12 h1{
       font-size: 30px;

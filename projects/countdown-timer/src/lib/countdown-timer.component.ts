@@ -13,11 +13,11 @@ import { map } from 'rxjs/internal/operators/map';
       </div>
              `,
   styles: [
-           '#timer {font-size:3em;font-weigth:100;color:white;padding: 5px; margin: 10px auto;max-width:1200px;display:flex;flex:wrap;justify-content:center;background-color:white}',
+           '#timer {font-size:3em;font-weigth:100;color:orange;padding: 5px; margin: 10px auto;max-width:1400px;display:flex;flex:wrap;justify-content:center;background-color:white}',
            '#timer div {display: inline-block;min-width: 90px;padding: 15px;background: #020b43;border-radius: 10px;border: 2px solid #030d52;margin: 15px}',
            '#timer div span {color: #ffffff;display: block;margin-top: 15px;font-size: .35em;font-weight: 400;}',
-           '@media (max-width: 400px){#timer{font-size:2.5em; color:orange}}',
-           '@media (max-width: 400px){#timer div {margin-left:20px}}'
+           '@media (max-width: 400px){#timer{font-size:2.5em; color:orange;max-width:400px}}',
+           '@media (max-width: 400px){#timer div {margin:5px 5px}}'
           ]
 })
 export class CountdownTimerComponent implements OnInit {
