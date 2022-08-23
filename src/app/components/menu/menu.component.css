@@ -57,13 +57,20 @@ h1{
     color: darkorange;
     font-family: Trebuchet MS;
 }
-h5{
-    color: darkorange;
+h5, h4{
+    color: #fff;
+}
+.countdown h5,h4{
+    text-align: center;
 }
 @media (max-width: 400px){
+   
     .col-12 h1{
       font-size: 30px;
-      
     }
+    h5, h4{
+        font-size: 12px;
+    }
+    
   
 }
