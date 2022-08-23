@@ -1,4 +1,4 @@
-import { CountdownTimerModule } from 'projects/countdown-timer/src/lib/countdown-timer.module';
+
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -71,7 +71,6 @@ registerLocaleData(localePy, 'es');
   ],
   imports: [
     BrowserModule,
-    CountdownTimerModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
