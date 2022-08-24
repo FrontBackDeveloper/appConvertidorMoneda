@@ -19,25 +19,27 @@ import { EdicionComponent } from './components/edicion/edicion.component';
 import { AuthGuard } from './guards/auth.guard';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { EditarperfilComponent } from './components/perfil/editarperfil/editarperfil.component';
+import { CuentaregresivaComponent } from './components/cuentaregresiva/cuentaregresiva.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component:HomeComponent},
   {path: 'convertidor', component:ConvertidorComponent},
-  {path: 'presupuestos', component:PresupuestoComponent},
+  {path: 'verpresupuestos', component:PresupuestoComponent},
+  {path: 'nuevopresupuesto', component:NuevoComponent},
   {path: 'cotizaciones', component:PanelComponent},
   {path: 'novedades', component:NovedadesComponent,
          children:[{path: 'detalles', component:DetallesComponent}]},
   {path: 'comentarios', component:ComentariosComponent},
   {path: 'itinerarios', component:ItinerariosComponent},
   {path: 'tipsypreguntasfrecuentes', component:TipsypreguntasfrecuentesComponent},
-  {path: 'nuevoPresupuesto', component:NuevoComponent},
   {path: 'login',component:LoginComponent},
   {path: 'contacto', component:ContactoComponent},
   {path: 'terminosycondiciones', component:TerminosycondicionesComponent},
   {path: 'edicion', canActivate: [AuthGuard], component:EdicionComponent},
   {path: 'perfil',  component:PerfilComponent,
           children:[{path: 'editarperfil', component: EditarperfilComponent }]},
+  {path: 'cuentaregresiva', component:CuentaregresivaComponent},          
   {path: '**', component:NotfoundComponent}
 ];
 

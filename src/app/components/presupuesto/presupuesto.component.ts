@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PresupuestoComponent implements OnInit {
 
+  opcion:string = "";
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+  descargarPDF(){
+    alert("¡ Se ha descargado el PDF correctamente !");
+
+  }
+  buscarPresupuesto(){
+    alert("buscando presupuesto");
   }
 
 }

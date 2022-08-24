@@ -8,14 +8,15 @@ import { map } from 'rxjs/internal/operators/map';
 })
 export class CuentaregresivaComponent implements OnInit {
 
+  finishDate?: Date;
+
+  finishDateString= "2023-03-07 23:50:00";
   time!: {
     days: number;
     hours: number;
     minutes: number;
     seconds: number;
   };
-  @Input() finishDateString: string = '';
-  finishDate: Date = new Date();
   
 
   ngOnInit(): void {
@@ -42,7 +43,7 @@ export class CuentaregresivaComponent implements OnInit {
   updateTime() {
     
     const now = new Date();
-    const diff = this.finishDate.getTime() - now.getTime();
+    const diff = this.finishDate!.getTime() - now.getTime();
    
 
     // Cálculos para sacar lo que resta hasta ese tiempo objetivo / final

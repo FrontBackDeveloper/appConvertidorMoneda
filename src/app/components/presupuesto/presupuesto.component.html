@@ -1,41 +1,50 @@
-<div class="container-fluid">
+<div class="container">
+  <h4>Lista de gastos del presupuesto: xxxx</h4>
 
-  <!--- LISTA DE DETALLES DE UN PRESUPUESTO SELECCIONADO-->
-  <table class="table table-dark table-striped">
-    <thead>
-      <tr>
-        <th scope="col">Gasto</th>
-        <th scope="col">Importe</th>
-        <th scope="col">Moneda</th>
-        <th scope="col">Total en pesos</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>gasto 1</td>
-        <td>importe 1</td>
-        <td>Euros</td>
-        <td>total en pesos 1</td>
-      </tr>
-      <tr>
-        <td>gasto 2</td>
-        <td>importe 2</td>
-        <td>Euros</td>
-        <td>total en pesos 2</td>
-      </tr>
-      <tr>
-        <td>gasto 3</td>
-        <td>importe  3</td>
-        <td>Dolar</td>
-        <td>total en pesos  3</td>
-      </tr>
-      <tr>
-        <td>gasto 4</td>
-        <td>importe 4</td>
-        <td>Euros</td>
-        <td>total en pesos 4</td>
-      </tr>
+  <!-- BARRA DE BUSQUEDA DE COTIZACIONES X BANCO-->
+  <br>
+
+    <div class="input-group mb-3">
+      <label class="btn btn-dark input-group-text" for="inputGroupSelect01" (click)="buscarPresupuesto()"> <i class="fa fa-search"></i> </label>
+      <select class="form-select" id="inputGroupSelect01" name="opcionBancos" [(ngModel)]="opcion">
       
-    </tbody>
-  </table>  
+        <option value="">presupuesto 1</option>
+        <option value="">presupuesto 2</option>
+        <option value="">presupuesto 3</option>
+
+      </select>
+    </div>
+
+  <div class="card mb-3 bg-dark" style="max-width: 1400px; margin-top: 5px;">
+      <div class="row g-0">
+     
+        <div class="col-sm-12">
+          <div class="card-body">
+            <h5 class="card-title">Nombre Gasto</h5>
+             
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Importe</th>
+          <th scope="col">Moneda</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>$999,999.00</td>
+          <td>Euros</td>
+        </tr>        
+      </tbody>
+    </table>  
+            <p class="card-text subtotal">Subtotal $ 000,000.00</p>
+           
+          </div>
+  </div>
 </div>
+  <div class="container">
+    <h6>Total: $ 999,999.00</h6>
+    <button class="btn btn-primary" (click)="descargarPDF()">Descargar PDF</button>
+
+  </div>
+ 
+
