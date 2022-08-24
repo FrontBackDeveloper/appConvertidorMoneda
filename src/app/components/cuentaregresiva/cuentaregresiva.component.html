@@ -1,8 +1,14 @@
-<div class="contaier-fluid">
-    <div id="timer">
-        <div>{{ time.days }} <span>Días</span></div>
-        <div>{{ time.hours }} <span>Horas</span></div>
-        <div>{{ time.minutes }} <span>Minutos</span></div>
-        <div>{{ time.seconds }} <span>Segundos</span></div>
+
+<div class="container">
+    <div class="row titulos">
+        <h5>Destino: España</h5>
+        <h4>Fecha de salida: 07/03/2022</h4>
+    </div>
+   
+    <div class="row reloj">
+        <div class="col-3">{{ time.days }} <span>Días</span></div>
+        <div class="col-3">{{ time.hours  }} <span>Horas</span></div>
+        <div class="col-3">{{ time.minutes }} <span>Minutos</span></div>
+        <div class="col-3">{{ time.seconds }} <span>Segundos</span></div>
     </div>
 </div>

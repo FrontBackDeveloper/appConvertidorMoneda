@@ -1,0 +1,12 @@
+h5,h4, p {
+    color: aliceblue;
+}
+.subtotal {
+    float: right;
+}
+
+h6{
+    color: darkorange;
+    float: right;
+    font-weight: 400;
+}

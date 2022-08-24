@@ -1,18 +1,14 @@
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-        <div class="col-12">
+       
+        <div class="col-10">
             <h1>PREPARA TU VIAJE AL EXTERIOR</h1>
         </div>
-   
-        <div class="col-12 countdown">
-            <h5>Destino: España</h5>
-            <h4>Fecha de salida: 07/03/2022</h4>
-            <app-cuentaregresiva [finishDateString]="'2023-03-07 23:50:00'"></app-cuentaregresiva>
-        </div>
-           
        
     </div>
+</div>
+<div class="container-fluid">
             <div class="row">
                 <div class="col-6 opcion1" routerLink="/convertidor">
                     <div>
@@ -26,7 +22,7 @@
                     </div>
                     <p><b>Cotizaciones mas Importantes</b></p>
                 </div>
-                <div class="col-6 opcion3" routerLink="/nuevoPresupuesto">
+                <div class="col-6 opcion3" routerLink="/verpresupuestos">
                     <div>
                         <img src="../../../assets/presupuestos2.webp" alt="Presupuestos">
                     </div>
@@ -61,7 +57,12 @@
                     </div>
                     <p><b>Dejar un Comentario</b></p>
                 </div>
-               
+                <div class="col-6 opcion8" routerLink="/cuentaregresiva">
+                    <div>
+                        <img src="../../../assets/reloj_countdown.png" alt="Cuenta regresiva">
+                    </div>
+                    <p><b>Reloj Cuenta regresiva</b></p>
+                </div>               
             </div>
 </div>
 <div class="container">
