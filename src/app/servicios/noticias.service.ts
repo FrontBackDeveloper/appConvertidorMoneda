@@ -23,3 +23,4 @@ export class NoticiasService {
     return this.http.get<any>('../assets/data/data.json')
   }
 }
+ 

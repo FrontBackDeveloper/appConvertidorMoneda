@@ -1,39 +1,65 @@
 
 <div class="container-fluid">
- 
+  
     <div class="card">
+           
+                <img src="../../../assets/bandera_argentina.png" class="rounded mx-auto d-block" alt="imagen de contacto con el desarrollador">
+                
+           
             <h2 class="tituloformulario">Contáctame</h2>
             <p class="parrafoformulario">Complete el formulario y me contactaré con ud. a la brevedad</p>
 				
-              <form>
+              <form [formGroup]="formContacto" (ngSubmit)="onSubmit($event)">
+                
+                <input type="hidden" name="id_usuario" formControlName="id_usuario">
+                <input type="hidden" name="nombre_usuario" formControlName="nombre_usuario">
                 <div class="mb-3">
-                    <input type="text" placeholder="Nombre"  formControlName="nombre" class="form-control" 
-                    
-                    required>    
+                    <input type="text" placeholder="Nombre"  formControlName="nombre" class="form-control">    
+                </div>
+                <div *ngIf="Nombre?.touched && Nombre?.errors">
+                    <div *ngIf="Nombre?.hasError('required')" class="container alert alert-danger" role="alert" >¡ El campo no puede estar vacío !</div>
+                    <div *ngIf="Nombre?.hasError('minlength')" class="container alert alert-danger" role="alert" >! El mínimo de caracteres aceptados es 4 !</div>
+                    <div *ngIf="Nombre?.hasError('maxlength')" class="container alert alert-danger" role="alert" >¡ El máximo de caracteres permitidos es 20 !</div>
                 </div>
  
 				<div class="mb-3">
-                    <input type="text" placeholder="Teléfono"  formControlName="telefono" class="form-control" 
-                   
-                    required>    
+                    <input type="text" placeholder="Teléfono"  formControlName="telefono" class="form-control">    
+                </div>
+                <div *ngIf="Telefono?.touched && Telefono?.errors">
+                    <div *ngIf="Telefono?.hasError('required')" class="container alert alert-danger" role="alert" >¡ El campo no puede estar vacío !</div>
+                    <div *ngIf="Telefono?.hasError('minlength')" class="container alert alert-danger" role="alert" >! El mínimo de caracteres aceptados es 10 !</div>
+                    <div *ngIf="Telefono?.hasError('maxlength')" class="container alert alert-danger" role="alert" >¡ El máximo de caracteres permitidos es 20 !</div>
                 </div>
 
                 <div class="mb-3">
-                    <input type="text" placeholder="email"  formControlName="email" class="form-control" 
-                    
-                    required>    
+                    <input type="text" placeholder="email"  formControlName="email" class="form-control">    
                 </div>
+                <div *ngIf="Email?.touched && Email?.errors">
+                    <div *ngIf="Email?.hasError('required')" class="container alert alert-danger" role="alert" >¡ El campo no puede estar vacío !</div>
+                    <div *ngIf="Email?.hasError('email')" class="container alert alert-danger" role="alert" >! El formato de email no es correcto !</div>
+                </div>
+                
                 <div class="mb-3">
-                    <input type="text" placeholder="asunto"  formControlName="suntol" class="form-control" 
-                    
-                    required>    
+                    <input type="text" placeholder="asunto"  formControlName="asunto" class="form-control">    
+                </div>
+                <div *ngIf="Asunto?.touched && Asunto?.errors">
+                    <div *ngIf="Asunto?.hasError('required')" class="container alert alert-danger" role="alert" >¡ El campo no puede estar vacío !</div>
+                    <div *ngIf="Asunto?.hasError('minlength')" class="container alert alert-danger" role="alert" >! El mínimo de caracteres aceptados es 4 !</div>
+                    <div *ngIf="Asunto?.hasError('maxlength')" class="container alert alert-danger" role="alert" >¡ El máximo de caracteres permitidos es 20 !</div>
                 </div>
 
 				<div class="mb-12">		
-					<textarea class="form-control" id="validationTextarea" formControlName="mensaje" placeholder="Escriba aquí su mensaje..." required></textarea> 
+					<textarea class="form-control" id="validationTextarea" formControlName="texto" placeholder="Escriba aquí su mensaje..."></textarea> 
                 </div>    
+                <div *ngIf="Texto?.touched && Texto?.errors">
+                    <div *ngIf="Texto?.hasError('required')" class="container alert alert-danger" role="alert" >¡ El campo no puede estar vacío !</div>
+                    <div *ngIf="Texto?.hasError('minlength')" class="container alert alert-danger" role="alert" >! El mínimo de caracteres aceptados es 10 !</div>
+                    <div *ngIf="Texto?.hasError('maxlength')" class="container alert alert-danger" role="alert" >¡ El máximo de caracteres permitidos es 200 !</div>
+                </div>
+                <input type="hidden" name="id_usuario" formControlName="fecha_enviado">
+
 				<div class="d-grid gap-2">
-					<button  type="submit" class="btn btn-primary">Enviar</button>
+					<button  type="submit" [disabled]="formContacto.invalid" class="btn btn-primary">Enviar</button>
      			    <button routerLink="/home" class="btn btn-primary">Cancelar</button>
 				</div>     
               </form>
