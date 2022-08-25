@@ -8,12 +8,11 @@
 p{
 	text-align: center;
 }
-.icon{
+p a{
 	color: #fff;
-	font-size: 25px;
-	margin: 0 10px;
-	transition: 0.4s;
+	text-decoration: none;
 }
+
 a{
 	text-decoration: none;
 }

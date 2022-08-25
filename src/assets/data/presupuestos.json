@@ -1,0 +1,22 @@
+{
+    "data":[
+        {
+            "id"                      : 1,  
+            "nombre_presupuesto"      : "viaje por europa",
+            "total"                   : 512310000,
+            "fecha_creado"            : "2022-07-20T21:10:07+00:00"
+        },
+        {
+            "id"                      : 2,  
+            "nombre_presupuesto"      : "viaje por EEUU",
+            "total"                   : 45212335,
+            "fecha_creado"            : "2022-07-20T21:10:07+00:00"
+        },
+        {
+            "id"                      : 3,  
+            "nombre_presupuesto"      : "compra de turisticos",
+            "total"                   : 12123,
+            "fecha_creado"            : "2022-07-20T21:10:07+00:00"
+        }
+    ]
+}
