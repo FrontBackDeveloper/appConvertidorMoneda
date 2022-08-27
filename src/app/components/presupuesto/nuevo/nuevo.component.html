@@ -7,18 +7,17 @@
      
       <div class="col-md-12">
         <div class="card-body">
-            <form [formGroup]="formPresupuestoNuevo" (ngSubmit)="guardarPresupuesto($event)">
-              <input type="hidden" name="id_usuario" formControlName="id_usuario">
-              <input type="hidden" name="nombre_usuario" formControlName="nombre_usuario">
+            <form [formGroup]="formPresupuestoNuevo" (ngSubmit)="guardarPresupuesto($event)" novalidate>
+              
               <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Nombre del presupuesto" name="nombre_presupuesto" formControlName="nombre_presupuesto">
+                <input type="text" class="form-control" placeholder="Nombre del presupuesto" formControlName="nombre_presupuesto" required>
               </div>              
               <div *ngIf="nombrePresupuesto?.touched && nombrePresupuesto?.errors">
                   <div *ngIf="nombrePresupuesto?.hasError('required')" class="container alert alert-danger" role="alert" >¡ El campo no puede estar vacío !</div>
                   <div *ngIf="nombrePresupuesto?.hasError('minlength')" class="container alert alert-info" role="alert" >! El mínimo de caracteres aceptados es 4 !</div>
                   <div *ngIf="nombrePresupuesto?.hasError('maxlength')" class="container alert alert-danger" role="alert" >¡ El máximo de caracteres permitidos es 20 !</div>
               </div>
-              <input type="hidden" name="fecha_guardado" formControlName="fecha_guardadoo">
+             
               <div class="d-grid gap-2">
                       <button [disabled]="formPresupuestoNuevo.invalid" type="submit" class="btn btn-primary">Guardar</button>
                       <button routerLink="/home" class="btn btn-primary">Cancelar</button>
@@ -30,3 +29,4 @@
  </div>
 </div> 
 
+ 

@@ -13,10 +13,6 @@
         <div class="col-md-10">
           <div class="card-body">
             <form [formGroup]="formComentarios" (ngSubmit)="publicarComentario($event)">
-              <input type="hidden" name="id_comentario" formControlName="id_comentario">
-              <input type="hidden" name="id_usuario" formControlName="id_usuario">
-              <input type="hidden" name="nombre_usuario" formControlName="nombre_usuario">
-              <input type="hidden" name="foto_perfil" formControlName="foto_perfil">
               <div class="mb-3">
                       <textarea placeholder="Escriba aquí su comentario..." name="texto" formControlName="texto" class="form-control"></textarea>
               </div>              
@@ -25,7 +21,6 @@
                   <div *ngIf="Texto?.hasError('minlength')" class="container alert alert-info" role="alert" >! El mínimo de caracteres aceptados es 10 !</div>
                   <div *ngIf="Texto?.hasError('maxlength')" class="container alert alert-danger" role="alert" >¡ El máximo de caracteres permitidos es 100 !</div>
               </div>
-              <input type="hidden" name="fecha_publicado" formControlName="fecha_publicado">
               <div class="d-grid gap-2">
                       <button [disabled]="formComentarios.invalid" type="submit" class="btn btn-primary">Publicar</button>
                       <button routerLink="/home" class="btn btn-primary">Cancelar</button>

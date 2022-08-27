@@ -12,4 +12,8 @@ export class PresupuestosService {
 
     return this.http.get<any>('../assets/data/presupuestos.json');
   }
+  obtenerGastos():Observable<any>{
+
+    return this.http.get<any>('../assets/data/gastos.json');
+  }
 }

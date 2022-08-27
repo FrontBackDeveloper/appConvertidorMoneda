@@ -16,7 +16,6 @@ export class NuevoComponent implements OnInit {
   presupuestosList: IPresupuesto[] = [];
   gastosList: IPresupuesto[] = [];
   formPresupuestoNuevo: FormGroup;
-  formGastoNuevo: FormGroup;
   isAlert = false;
   fecha_actual = new Date();
 
@@ -25,48 +24,25 @@ export class NuevoComponent implements OnInit {
               private router: Router) {
                 this.formPresupuestoNuevo = this.formBuilder.group(
                   {
-                    id_presupuesto: [''],
-                    id_usuario: ['aquí va el id_usuario gusrdado en coquie o Local Storage'],
-                    nombre_presupuesto: ['', [Validators.required, Validators.maxLength(20), Validators.minLength(4)]],
-                    fecha_publicado: [this.fecha_actual]
+                    nombre_presupuesto: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]],
+                    fecha_publicado: [this.fecha_actual],
+                    id_usuario: ['id_usuario']
                   }
                 );
-                this.formGastoNuevo = this.formBuilder.group(
-                  {
-                    id_gasto: [''],
-                    nombre_gasto: ['', [Validators.required, Validators.maxLength(20), Validators.minLength(4)]],
-                    importe: ['', [Validators.required, Validators.maxLength(20)]],
-                    moneda: ['', [Validators.required, Validators.maxLength(20)]],
-                    total: ['', [Validators.required, Validators.maxLength(20)]],
-                    fecha_publicado: [this.fecha_actual]
-                  }
-                )
+                
               }
 
   ngOnInit(): void {
   }
 
 guardarPresupuesto(event: Event){
-    alert(" ¡Se ha guardado un nuevo Presupuesto !");
+    console.log(this.formPresupuestoNuevo.value);
+    alert(" ¡Se ha guardado un nuevo Presupuesto ! (EN DESARROLLO)");
+    this.router.navigate(['/verpresupuestos']);
 }
-guardarGasto(event: Event){
-  alert("¡ Se ha agregado un nuevo Gasto al Presupuesto !");
-}
+
 get nombrePresupuesto() {
   return this.formPresupuestoNuevo.get('nombre_presupuesto');
 }
-get nombreGasto() {
-  return this.formGastoNuevo.get('nombre_presupuesto');
-}
-get importe() {
-  return this.formGastoNuevo.get('nombre_presupuesto');
-}
-get moneda() {
-  return this.formGastoNuevo.get('nombre_presupuesto');
-}
-get total() {
-  return this.formGastoNuevo.get('nombre_presupuesto');
-}
-
 
 }

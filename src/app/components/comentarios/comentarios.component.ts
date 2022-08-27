@@ -22,11 +22,10 @@ export class ComentariosComponent implements OnInit {
                private router: Router) {
     this.formComentarios = this.formBuilder.group(
       {
-        id_comentario: ['aquí va el id'],
-        id_usuario: ['aquí va el id_usuario gusrdado en coquie o Local Storage'],
-        nombre_usuario: ['aquí va el nombred_usuario gusrdado en coquie o Local Storage'],
-        foto_perfil: ['aquí va el foto_perfil gusrdado en coquie o Local Storage'],
-        texto: ['', [Validators.required, Validators.maxLength(100), Validators.minLength(10)]],
+        id_usuario: ['id_usuario'],
+        nombre_usuario: ['nombre_de_usuario'],
+        foto_perfil: ['foto_perfil'],
+        texto: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]],
         fecha_publicado: [this.fecha_actual]
       }
     )
@@ -49,8 +48,8 @@ export class ComentariosComponent implements OnInit {
   publicarComentario(event: Event){
    let comentario: IComentarios = this.formComentarios.value;
    console.log(comentario);
-   if (confirm(" Enviado exitósamente !, desea volver a comentar?")){
-    this.clearFormulario();
+   if (confirm(" ¡ Enviado exitósamente !, desea volver a comentar? (EN DESARROLLO)")){
+      this.clearFormulario();
       this.reloadData();
    }else this.router.navigate(['/home']);
    
@@ -58,7 +57,6 @@ export class ComentariosComponent implements OnInit {
 
   clearFormulario() {
     this.formComentarios.setValue({
-      id_comentario: '',
       id_usuario: '',
       nombre_usuario: '',
       foto_perfil: '',

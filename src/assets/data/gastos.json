@@ -1,0 +1,32 @@
+{
+    "gastos":[
+        {
+            "id"                      : 1,  
+            "nombre_gasto"            : "aereos",
+            "importe"                 : 100,
+            "moneda"                  : "Euros",
+            "fecha_creado"            : "2022-07-20T21:10:07+00:00"
+        },
+        {
+            "id"                      : 2,  
+            "nombre_gasto"            : "seguro",
+            "importe"                 : 300,
+            "moneda"                  : "Pesos",
+            "fecha_creado"            : "2022-07-20T21:10:07+00:00"
+        },
+        {
+            "id"                      : 3,  
+            "nombre_gasto"            : "pasaportes",
+            "importe"                 : 50,
+            "moneda"                  : "Dolar",
+            "fecha_creado"            : "2022-07-20T21:10:07+00:00"
+        },
+        {
+            "id"                      : 4,  
+            "nombre_gasto"            : "combustible",
+            "importe"                 : 800,
+            "moneda"                  : "Euros",
+            "fecha_creado"            : "2022-07-20T21:10:07+00:00"
+        }
+    ]
+}
