@@ -17,7 +17,7 @@ constructor(private authService:AuthService,
 
       return true;
     }
-    alert("Acceso denegado, debe estar Logueado");
+    alert("Debe iniciar Sesión para continuar");
     this.route.navigate(['/login']);
     return false;
   }

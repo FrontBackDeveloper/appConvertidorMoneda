@@ -37,6 +37,7 @@ import { ListaComentariosComponent } from './components/comentarios/lista-coment
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { EditarperfilComponent } from './components/perfil/editarperfil/editarperfil.component';
 import { CuentaregresivaComponent } from './components/cuentaregresiva/cuentaregresiva.component';
+import { RegistroComponent } from './components/registro/registro.component';
 
 
 registerLocaleData(localePy, 'es');
@@ -67,7 +68,8 @@ registerLocaleData(localePy, 'es');
     ListaComentariosComponent,
     PerfilComponent,
     EditarperfilComponent,
-    CuentaregresivaComponent
+    CuentaregresivaComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

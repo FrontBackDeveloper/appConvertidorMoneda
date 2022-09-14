@@ -47,7 +47,7 @@ export class ComentariosComponent implements OnInit {
 
   publicarComentario(event: Event){
    let comentario: IComentarios = this.formComentarios.value;
-   console.log(comentario);
+  
    if (confirm(" ¡ Enviado exitósamente !, desea volver a comentar? (EN DESARROLLO)")){
       this.clearFormulario();
       this.reloadData();
