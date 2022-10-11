@@ -40,7 +40,7 @@ const routes: Routes = [
   {path: 'edicion', canActivate: [AuthGuard], component:EdicionComponent},
   {path: 'perfil',  component:PerfilComponent,
           children:[{path: 'editarperfil', component: EditarperfilComponent }]},
-  {path: 'cuentaregresiva', canActivate: [AuthGuard], component:CuentaregresivaComponent},     
+  {path: 'cuentaregresiva', component:CuentaregresivaComponent},     
   {path: 'registro', component:RegistroComponent},     
   {path: '**', component:NotfoundComponent}
 ];

@@ -1,14 +1,46 @@
 
 <div class="container">
+    <!--    <h4>Agregar reloj de cuenta regresiva</h4><br>
+   
+    <div class="card mb-3 bg-dark" style="max-width: 1400px;">
+      <div class="row g-0">
+       
+        <div class="col-md-12">
+          <div class="card-body">
+              <form novalidate>
+                
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="Título de la cuenta regresiva" formControlName="titulo" required>
+                </div>              
+                <div class="mb-3">
+                    <input type="date" class="form-control" placeholder="Fecha límite" formControlName="fecha_limite" required>
+                  </div> 
+               
+                <div class="d-grid gap-2">
+                        <button  type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+              </form>
+          </div> 
+        </div>
+      </div>    
+   </div>
+-->
+
+<div class="cuenta_regresiva">
     <div class="row titulos">
         <h5>Destino: España</h5>
         <h4>Fecha de salida: 07/03/2023</h4>
     </div>
    
+     <div class="row reloj">
+        <div class="col-9">{{ time.days }} <span>Días</span></div>
+       
+    </div>
     <div class="row reloj">
-        <div class="col-3">{{ time.days }} <span>Días</span></div>
         <div class="col-3">{{ time.hours  }} <span>Horas</span></div>
         <div class="col-3">{{ time.minutes }} <span>Minutos</span></div>
         <div class="col-3">{{ time.seconds }} <span>Segundos</span></div>
     </div>
+</div>
+   
 </div>
