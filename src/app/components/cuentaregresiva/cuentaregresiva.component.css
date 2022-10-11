@@ -8,14 +8,13 @@
     padding: 40px;
 }
 .reloj{
-    padding: 40px;
+    padding: 5px;
 }
 .row{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-	max-width: 1400px;
-    
+	max-width: 1400px;  
 }
 .col-3{
     background-color: blue;
@@ -24,6 +23,15 @@
     margin: 5px 5px;
     border-radius: 10px;
     max-width: 100px;
+   
+}
+.col-9{
+    background-color: blue;
+    font-size: 3em;
+    color: azure;
+    margin: 5px 5px;
+    border-radius: 10px;
+    max-width: 320px;
    
 }
 span {

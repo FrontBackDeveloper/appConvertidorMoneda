@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { interval } from 'rxjs/internal/observable/interval';
 import { map } from 'rxjs/internal/operators/map';
 @Component({
@@ -7,6 +9,10 @@ import { map } from 'rxjs/internal/operators/map';
   styleUrls: ['./cuentaregresiva.component.css']
 })
 export class CuentaregresivaComponent implements OnInit {
+
+  isUserLogged: Boolean = false;
+  cuenta_regresiva_List: any[] = [];
+  formCuentaRegresivaNuevo: FormGroup;
 
   finishDate?: Date;
 
@@ -17,6 +23,16 @@ export class CuentaregresivaComponent implements OnInit {
     minutes: number;
     seconds: number;
   };
+  constructor(private formBuilder: FormBuilder,
+    private router: Router) {
+      this.formCuentaRegresivaNuevo = this.formBuilder.group(
+        {
+          titulo: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]],
+          fecha_limite: ['', [Validators.required]]
+        }
+      );
+      
+    }
   
 
   ngOnInit(): void {
