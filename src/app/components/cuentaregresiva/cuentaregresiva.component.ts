@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { interval } from 'rxjs/internal/observable/interval';
 import { map } from 'rxjs/internal/operators/map';
+import { AuthService } from 'src/app/servicios/auth.service';
 @Component({
   selector: 'app-cuentaregresiva',
   templateUrl: './cuentaregresiva.component.html',
@@ -13,7 +14,6 @@ export class CuentaregresivaComponent implements OnInit {
   isUserLogged: Boolean = false;
   cuenta_regresiva_List: any[] = [];
   formCuentaRegresivaNuevo: FormGroup;
-
   finishDate?: Date;
 
   finishDateString= "2023-03-07 23:50:00";
@@ -24,7 +24,8 @@ export class CuentaregresivaComponent implements OnInit {
     seconds: number;
   };
   constructor(private formBuilder: FormBuilder,
-    private router: Router) {
+              private router: Router,
+              private authservice: AuthService) {
       this.formCuentaRegresivaNuevo = this.formBuilder.group(
         {
           titulo: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]],
@@ -36,6 +37,10 @@ export class CuentaregresivaComponent implements OnInit {
   
 
   ngOnInit(): void {
+    
+      this.isUserLogged = this.authservice.isUserLogged();
+      
+    
     // Inicializamos el momento que falta hasta llegaral tiempo objetivo con valores en 0
     this.time = {
       days: 0, hours: 0, minutes: 0, seconds: 0
@@ -84,5 +89,9 @@ export class CuentaregresivaComponent implements OnInit {
       })
     );
   }
-
+ guardar(){
+    alert("¡Se ha guardado correctamente! (EN DESARROLLO)");
+    
+  }
+  
 }
