@@ -42,6 +42,20 @@ h5, h4{
     text-align: center;
     color: #fff;
 }
+h6{
+    text-align: right;
+    color: #fff;
+}
+i{
+    font-size: 25px;
+    color: orange;
+    cursor: pointer;
+}
+i:hover{
+    color: yellow;
+    transition: .5s;
+
+}
  @media (max-width:400px){
     .col-3{
         font-size: 2.5em;
