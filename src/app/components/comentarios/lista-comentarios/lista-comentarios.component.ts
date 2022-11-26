@@ -8,14 +8,16 @@ import { ComentariosService } from 'src/app/servicios/comentarios.service';
 })
 export class ListaComentariosComponent implements OnInit {
   comentariosList:any []=[];
+  respuestasList: any[] = [];
 
   constructor(private comentariosSVC : ComentariosService) { }
 
   ngOnInit(): void {
     this.comentariosSVC.obtenerComentarios().subscribe(
       (data:any) => {
-        this.comentariosList=data.data;
-        console.log("datos mockeados" + data);
+        this.comentariosList=data.reverse();
+        console.log(data);
+    
       }
       );
   }

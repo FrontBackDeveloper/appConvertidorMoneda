@@ -13,14 +13,16 @@
         <div class="col-md-10">
           <div class="card-body">
             <form [formGroup]="formComentarios" (ngSubmit)="publicarComentario($event)">
+              <input type="hidden" name="nombre_usuario" value="usuario">
               <div class="mb-3">
-                      <textarea placeholder="Escriba aquí su comentario..." name="texto" formControlName="texto" class="form-control"></textarea>
+                      <textarea placeholder="Escriba aquí su comentario..." name="comentario" formControlName="comentario" class="form-control"></textarea>
               </div>              
-              <div *ngIf="Texto?.touched && Texto?.errors">
-                  <div *ngIf="Texto?.hasError('required')" class="container alert alert-danger" role="alert" >¡ El campo no puede estar vacío !</div>
-                  <div *ngIf="Texto?.hasError('minlength')" class="container alert alert-info" role="alert" >! El mínimo de caracteres aceptados es 10 !</div>
-                  <div *ngIf="Texto?.hasError('maxlength')" class="container alert alert-danger" role="alert" >¡ El máximo de caracteres permitidos es 100 !</div>
+              <div *ngIf="Comentario?.touched && Comentario?.errors">
+                  <div *ngIf="Comentario?.hasError('required')" class="container alert alert-danger" role="alert" >¡ El campo no puede estar vacío !</div>
+                  <div *ngIf="Comentario?.hasError('minlength')" class="container alert alert-info" role="alert" >! El mínimo de caracteres aceptados es 10 !</div>
+                  <div *ngIf="Comentario?.hasError('maxlength')" class="container alert alert-danger" role="alert" >¡ El máximo de caracteres permitidos es 100 !</div>
               </div>
+              <input type="hidden" name="fecha_publicado" value=fecha_actual>
               <div class="d-grid gap-2">
                       <button [disabled]="formComentarios.invalid" type="submit" class="btn btn-primary">Publicar</button>
                       <button routerLink="/home" class="btn btn-primary">Cancelar</button>

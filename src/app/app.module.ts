@@ -77,6 +77,7 @@ registerLocaleData(localePy, 'es');
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
+
   ],
   providers: [ApiCotizacionesService, AuthService, {provide: LOCALE_ID, useValue: 'es'}],
   bootstrap: [AppComponent]

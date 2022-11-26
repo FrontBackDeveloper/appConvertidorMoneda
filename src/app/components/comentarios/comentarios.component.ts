@@ -22,10 +22,10 @@ export class ComentariosComponent implements OnInit {
                private router: Router) {
     this.formComentarios = this.formBuilder.group(
       {
-        id_usuario: ['id_usuario'],
+        
         nombre_usuario: ['nombre_de_usuario'],
         foto_perfil: ['foto_perfil'],
-        texto: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]],
+        comentario: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]],
         fecha_publicado: [this.fecha_actual]
       }
     )
@@ -39,15 +39,18 @@ export class ComentariosComponent implements OnInit {
   reloadData() {
     this.comentariosSVC.obtenerComentarios().subscribe(
       (data:any) => {
-        this.comentariosList = data.data;
+        this.comentariosList = data;
+        console.log(data);
       }
+     
     );
    
   }
 
   publicarComentario(event: Event){
    let comentario: IComentarios = this.formComentarios.value;
-  
+   this.comentariosSVC.agregarComentario(comentario).subscribe();
+    
    if (confirm(" ¡ Enviado exitósamente !, desea volver a comentar? (EN DESARROLLO)")){
       this.clearFormulario();
       this.reloadData();
@@ -57,14 +60,14 @@ export class ComentariosComponent implements OnInit {
 
   clearFormulario() {
     this.formComentarios.setValue({
-      id_usuario: '',
+     
       nombre_usuario: '',
       foto_perfil: '',
-      texto: '',
+      comentario: '',
       fecha_publicado: ''
     })
   }
-  get Texto() {
+  get Comentario() {
     return this.formComentarios.get('texto');
   }
 
